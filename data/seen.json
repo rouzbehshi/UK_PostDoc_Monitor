@@ -53,7 +53,7 @@
   "url": "https://ubedsli.webitrent.com/ubedsli_webrecruitment/wrd/run/ETREC109DF.open?REQUEST=RET&PROFILE=VACANCY_ID.TVACANCY=287666HYGi&VACANCY_ID=287666HYGi&ACTION_ID=WEB_REC&USESSION=BBE5590C4D90A5FFEC1F5D220FD85EC7&CONT=GUEST&WVID=084787GnQS&LANG=USA",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "3bd84dad87b79fc6": {
   "university": "Birkbeck, University of London",
@@ -1165,7 +1165,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29511&jobTitle=Research+Associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "488748edc2c9a72a": {
   "university": "Imperial College London",
@@ -1173,7 +1173,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29502&jobTitle=Research+Associate+in+Palaeointensity+Determination+from+Chemical+Remanent+Magnetisation+%28ChemPI%29",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "bf63aad1afff3d60": {
   "university": "Imperial College London",
@@ -1181,7 +1181,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29490&jobTitle=Research+Associate+in+Dexterous+Manipulation+and+Robot+Learning+",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "655864b55ea7648c": {
   "university": "Imperial College London",
@@ -1189,7 +1189,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29495&jobTitle=Research+Associate+in+Neurotechnology+and+Bioelectronic+Devices",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "bfbf8566491f8027": {
   "university": "Imperial College London",
@@ -1197,7 +1197,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29472&jobTitle=Research+Assistant+or+Associate+in+Mechanics+of+Advanced+Composite+Structures",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "02998a667672e692": {
   "university": "Imperial College London",
@@ -1205,7 +1205,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29475&jobTitle=Research+Assistant+or+Associate+in+Mechanics+of+Advanced+Composite+Structures",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "65b2f86580571726": {
   "university": "Imperial College London",
@@ -1213,7 +1213,7 @@
   "url": "https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=29476&jobTitle=Research+Associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 0
+  "missing_days": 1
  },
  "42f965ce56d673ac": {
   "university": "King's College London",
@@ -2227,6 +2227,14 @@
   "university": "Glasgow School of Art",
   "title": "Research Staff Profiles→",
   "url": "https://radar.gsa.ac.uk/view/user_profile",
+  "first_seen": "2026-10-24",
+  "last_seen": "2026-10-24",
+  "missing_days": 0
+ },
+ "1f8b155200d60222": {
+  "university": "University of Bedfordshire",
+  "title": "Research Fellow in Applied AI and Cybersecurity Apply online",
+  "url": "https://ubedsli.webitrent.com/ubedsli_webrecruitment/wrd/run/ETREC109DF.open?REQUEST=RET&PROFILE=VACANCY_ID.TVACANCY=287666HYGi&VACANCY_ID=287666HYGi&ACTION_ID=WEB_REC&USESSION=369CB7C7068D7A1418280DB8485327F8&CONT=GUEST&WVID=084787GnQS&LANG=USA",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
   "missing_days": 0
