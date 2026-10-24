@@ -203,52 +203,262 @@ async def open_page(ctx, url):
     return page
 
 
+BLOCK_RE = re.compile(r"(performing security verification|verify you are human|just a moment|max challenge attempts|access denied|attention required)", re.I)
+FOLLOW_RULES = [  # (score, regex on link text + href)
+    (10, re.compile(r"(cat=-1|full\s+list|view[\s_-]*all|viewalljobs|all\s+(current\s+)?(jobs|vacanc|opportunit|roles)|/requisitions|vacancy-search-results|search-results)", re.I)),
+    (7, re.compile(r"research.{0,40}(careers|jobs|opportunit|teaching|\(\d+\))|(academic|education).{0,25}research|research\s*(and|&|/)\s*(teaching|enterprise|clinical)", re.I)),
+    (4, re.compile(r"(current\s+(vacanc|jobs|opportunit)|search\s+(and\s+apply|our\s+jobs|jobs|vacanc|for\s+jobs)|job\s+search|find\s+(a\s+)?job|browse\s+jobs|latest\s+vacanc|external\s+vacanc|^vacancies$|^jobs$)", re.I)),
+]
+FOLLOW_SKIP = re.compile(r"(login|logon|log-in|sign[\s-]?in|register|registration|faq|cookie|privacy|terms|accessib|rss|alert|subs/|internal|mailto:|\.pdf|facebook|twitter|linkedin|instagram|youtube|studentship|phd|apprentice|casual|unitemps)", re.I)
+SEARCH_BTN_RE = re.compile(r"^(search|search jobs|search vacancies|find jobs|search for jobs|show jobs|view jobs|go)$", re.I)
+
+
+def research_jobs(anchors):
+    uniq = {}
+    for a in anchors:
+        if is_research(a["title"], a["ctx"]):
+            uniq.setdefault(norm_url(a["href"]), a)
+    return list(uniq.values())
+
+
+def same_site(u1, u2):
+    h1, h2 = urlparse(u1).netloc.lower(), urlparse(u2).netloc.lower()
+    base = lambda h: ".".join(h.split(".")[-3:]) if h.endswith(".ac.uk") else ".".join(h.split(".")[-2:])
+    return base(h1) == base(h2)
+
+
+def follow_candidates(anchors, start_url, uni_urls):
+    scored = {}
+    for a in anchors:
+        h = a["href"]
+        blob = f"{a['title']} {h}"
+        if FOLLOW_SKIP.search(blob) or norm_url(h) == norm_url(start_url):
+            continue
+        if not any(same_site(h, u) for u in uni_urls) and not re.search(
+                r"(webitrent|taleo|oraclecloud|corehr|engageats|myworkdayjobs|pinpointhq|teamtailor|successfactors|tal\.net|eploy|jobtrain|//jobs\.|//vacancies\.|//careers\.|//recruitment\.)", h, re.I):
+            continue
+        for sc, rx in FOLLOW_RULES:
+            if rx.search(blob):
+                scored[norm_url(h)] = max(scored.get(norm_url(h), 0), sc)
+                break
+    return [u for u, _ in sorted(scored.items(), key=lambda x: -x[1])]
+
+
+async def try_search_button(page):
+    """Click an empty 'Search' / 'Find jobs' button (CoreHR, webitrent, engage...) and return anchors."""
+    try:
+        clicked = await page.evaluate(r"""(pat) => {
+          const re = new RegExp(pat, 'i');
+          for (const el of document.querySelectorAll('button, input[type=submit], input[type=button], a[role=button]')) {
+            const l = (el.innerText || el.value || el.getAttribute('aria-label') || '').replace(/\s+/g,' ').trim();
+            const r = el.getBoundingClientRect();
+            if (re.test(l) && r.width > 0 && r.height > 0) { el.setAttribute('data-ukpm-search','1'); return true; }
+          }
+          return false; }""", SEARCH_BTN_RE.pattern)
+        if not clicked:
+            return []
+        await page.locator("[data-ukpm-search]").first.click(timeout=5000)
+        try:
+            await page.wait_for_load_state("networkidle", timeout=20000)
+        except PWTimeout:
+            pass
+        await page.wait_for_timeout(2500)
+        return await expand_and_collect(page)
+    except Exception:
+        return []
+
+
+async def oracle_jobs(ctx, url):
+    """Oracle Recruiting Cloud: read the public job-search REST API directly."""
+    m = re.search(r"^(https://[^/]+)/hcmUI/CandidateExperience/[a-z]{2}/sites/([A-Za-z0-9_]+)", url)
+    if not m:
+        return None
+    base, site = m.group(1), m.group(2)
+    out, offset = [], 0
+    while offset < 1000:
+        api = (f"{base}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true&expand=requisitionList"
+               f"&finder=findReqs;siteNumber={site},limit=100,offset={offset},sortBy=POSTING_DATES_DESC")
+        r = await ctx.request.get(api, timeout=30000)
+        if r.status != 200:
+            break
+        items = (await r.json()).get("items") or [{}]
+        reqs = items[0].get("requisitionList") or []
+        for q in reqs:
+            out.append({"href": f"{base}/hcmUI/CandidateExperience/en/sites/{site}/job/{q.get('Id')}",
+                        "title": (q.get("Title") or "").strip(), "ctx": f"{q.get('PrimaryLocation') or ''} | posted {q.get('PostedDate') or ''}",
+                        "oracle": {"base": base, "site": site, "id": q.get("Id")}})
+        total = items[0].get("TotalJobsCount") or 0
+        offset += 100
+        if not reqs or offset >= total:
+            break
+    return out
+
+
+async def oracle_text(ctx, o):
+    api = (f"{o['base']}/hcmRestApi/resources/latest/recruitingCEJobRequisitionDetails?expand=all&onlyData=true"
+           f"&finder=ById;Id=%22{o['id']}%22,siteNumber={o['site']}")
+    r = await ctx.request.get(api, timeout=30000)
+    it = ((await r.json()).get("items") or [{}])[0]
+    parts = [it.get("Title") or "", it.get("PrimaryLocation") or "", it.get("ExternalDescriptionStr") or "",
+             it.get("ExternalResponsibilitiesStr") or "", it.get("ExternalQualificationsStr") or ""]
+    html = "\n".join(p for p in parts if p)
+    return re.sub(r"\n{3,}", "\n\n", re.sub(r"<[^>]+>", "\n", html)).strip()
+
+
+async def scan_page_tree(ctx, start_url, uni_urls, res):
+    """Open start_url; if it has no research links, explore up to 4 promising links (view all,
+    research category, current vacancies...) and, failing that, press an empty Search button."""
+    page = await open_page(ctx, start_url)
+    try:
+        body = (await page.evaluate("() => (document.body ? document.body.innerText : '').slice(0, 3000)")) or ""
+        if BLOCK_RE.search(body) or BLOCK_RE.search(await page.title()):
+            res["status"] = "blocked"
+            return []
+        if "/hcmUI/CandidateExperience/" in page.url:
+            oj = await oracle_jobs(ctx, page.url)
+            if oj is not None:
+                res["followed"] = "oracle-api"
+                res["links"] = len(oj)
+                return research_jobs(oj) if oj else []
+        anchors = await expand_and_collect(page)
+        res["links"] = len(anchors)
+        jobs = research_jobs(anchors)
+        if jobs:
+            return jobs
+        visited = []
+        for nxt in follow_candidates(anchors, page.url, uni_urls)[:4]:
+            p2 = await open_page(ctx, nxt)
+            try:
+                if "/hcmUI/CandidateExperience/" in p2.url:
+                    a2 = await oracle_jobs(ctx, p2.url) or []
+                else:
+                    a2 = await expand_and_collect(p2)
+                visited.append(nxt)
+                res["links"] += len(a2)
+                jobs += research_jobs(a2)
+                if not jobs and len(visited) == 1:
+                    a3 = await try_search_button(p2)
+                    jobs += research_jobs(a3)
+            finally:
+                await p2.close()
+        res["followed"] = " ; ".join(visited)
+        if not jobs:
+            a4 = await try_search_button(page)
+            if a4:
+                res["followed"] += " ; [search button]"
+                res["links"] += len(a4)
+                jobs += research_jobs(a4)
+        return jobs
+    finally:
+        await page.close()
+
+
 async def scan_university(ctx, uni: dict, sem) -> dict:
-    url = uni["vacancies_url"] or uni["landing_url"]
-    res = {"name": uni["name"], "url": url, "status": "ok", "links": 0, "research": 0,
+    urls = [u for u in (uni["vacancies_url"], uni["landing_url"]) if u]
+    res = {"name": uni["name"], "url": urls[0] if urls else "", "status": "ok", "links": 0, "research": 0,
            "followed": "", "error": "", "jobs": []}
-    if not url:
+    if not urls:
         res["status"] = "no_url"
         return res
     async with sem:
-        page = None
-        try:
-            page = await open_page(ctx, url)
-            anchors = await expand_and_collect(page)
-            jobs = [a for a in anchors if is_research(a["title"], a["ctx"])]
-            # landing page with no research links: follow one "vacancies" link
-            if not jobs:
-                cand = [a for a in anchors if VACANCY_LINK_RE.search(a["title"] or "") and norm_url(a["href"]) != norm_url(url)]
-                if cand:
-                    nxt = cand[0]["href"]
-                    await page.close()
-                    page = await open_page(ctx, nxt)
-                    anchors = await expand_and_collect(page)
-                    jobs = [a for a in anchors if is_research(a["title"], a["ctx"])]
-                    res["followed"] = nxt
-            res["links"] = len(anchors)
-            # de-duplicate by normalised url
-            uniq = {}
-            for j in jobs:
-                uniq.setdefault(norm_url(j["href"]), j)
-            res["jobs"] = list(uniq.values())
-            res["research"] = len(res["jobs"])
-            if res["links"] < 5:
-                res["status"] = "few_links"
-        except Exception as e:
-            res["status"] = "error"
-            res["error"] = f"{type(e).__name__}: {str(e).splitlines()[0][:200]}"
-        finally:
-            if page:
-                await page.close()
+        for i, url in enumerate(urls):
+            res.update(status="ok", error="", url=url)
+            try:
+                jobs = await scan_page_tree(ctx, url, urls, res)
+                uniq = {}
+                for j in jobs:
+                    uniq.setdefault(norm_url(j["href"]), j)
+                res["jobs"] = list(uniq.values())
+                res["research"] = len(res["jobs"])
+                if res["status"] == "ok" and res["links"] < 5:
+                    res["status"] = "few_links"
+            except Exception as e:
+                res["status"] = "error"
+                res["error"] = f"{type(e).__name__}: {str(e).splitlines()[0][:200]}"
+            if res["research"] or (res["status"] == "ok" and i == 0 and res["links"] >= 15):
+                break
     print(f"[{res['status']:9}] {res['research']:3} research / {res['links']:4} links  {uni['name']}", flush=True)
     return res
 
 
-async def fetch_text(ctx, url, sem) -> str:
+# ---------------------------------------------------------------- jobs.ac.uk, one employer page per institution
+JOBSAC_OVERRIDES = {
+    "University College London": ["ucl"],
+    "University of Manchester": ["the-university-of-manchester"],
+    "London School of Economics and Political Science": ["london-school-of-economics-and-political-science", "the-london-school-of-economics-and-political-science-lse", "lse"],
+    "Imperial College London": ["imperial-college-london"],
+    "King's College London": ["kings-college-london"],
+    "Queen's University Belfast": ["queens-university-belfast"],
+    "City St George's, University of London": ["city-st-georges-university-of-london"],
+    "St Mary's University, Twickenham": ["st-marys-university-twickenham"],
+    "Coventry University": ["coventry-university-group", "coventry-university"],
+    "Open University": ["the-open-university"],
+    "University of Edinburgh": ["the-university-of-edinburgh", "university-of-edinburgh"],
+    "University of Sheffield": ["the-university-of-sheffield", "university-of-sheffield"],
+    "University of Nottingham": ["the-university-of-nottingham", "university-of-nottingham"],
+    "University of Warwick": ["the-university-of-warwick", "university-of-warwick"],
+    "University of the West of England": ["university-of-the-west-of-england-bristol-uwe", "uwe-bristol", "university-of-the-west-of-england"],
+    "Institute of Cancer Research": ["the-institute-of-cancer-research"],
+    "London School of Hygiene & Tropical Medicine": ["london-school-of-hygiene-tropical-medicine", "london-school-of-hygiene-and-tropical-medicine"],
+}
+
+
+def slugify(name):
+    s = name.lower().replace("&", "and").replace("'", "").replace("’", "")
+    return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
+
+
+async def jobsac_scan(ctx, uni, sem, slug_cache):
+    name = uni["name"]
+    res = {"name": name, "slug": "", "status": "ok", "jobs": [], "pages": 0}
+    cands = [slug_cache[name]] if slug_cache.get(name) else (
+        JOBSAC_OVERRIDES.get(name, []) + [slugify(name), "the-" + slugify(name)])
+    async with sem:
+        for slug in dict.fromkeys(cands):
+            found, page = {}, None
+            try:
+                for k in range(12):
+                    url = f"https://www.jobs.ac.uk/search/employer/{slug}?sortOrder=1&pageSize=25&startIndex={1 + 25 * k}"
+                    page = await open_page(ctx, url)
+                    title = await page.title()
+                    if k == 0 and ("Apply Online at jobs.ac.uk" not in title or title.startswith("jobs.ac.uk")):
+                        break
+                    anchors = await page.evaluate(EXTRACT_JS)
+                    await page.close(); page = None
+                    new = 0
+                    for a in anchors:
+                        if re.search(r"jobs\.ac\.uk/job/[A-Z0-9]+", a["href"]) and norm_url(a["href"]) not in found:
+                            found[norm_url(a["href"])] = a; new += 1
+                    res["pages"] = k + 1
+                    if new < 20:
+                        break
+            except Exception as e:
+                res["status"] = f"error: {type(e).__name__}"
+            finally:
+                if page:
+                    await page.close()
+            if found:
+                res["slug"] = slug
+                slug_cache[name] = slug
+                res["jobs"] = [a for a in found.values() if is_research(a["title"], a["ctx"])]
+                break
+        if not res["slug"] and res["status"] == "ok":
+            res["status"] = "employer not found"
+    print(f"[jobs.ac.uk] {len(res['jobs']):3} research  {name} ({res['slug'] or res['status']})", flush=True)
+    return res
+
+
+async def fetch_text(ctx, url, sem, oracle=None) -> str:
     async with sem:
         page = None
         try:
+            if oracle:
+                try:
+                    t = await oracle_text(ctx, oracle)
+                    if len(t) > 200:
+                        return t[:MAX_TEXT]
+                except Exception:
+                    pass
             page = await open_page(ctx, url)
             return (await page.evaluate(TEXT_JS))[:MAX_TEXT]
         except Exception as e:
@@ -273,27 +483,46 @@ async def main():
         ctx = await browser.new_context(user_agent=UA, locale="en-GB", viewport={"width": 1366, "height": 900})
         sem = asyncio.Semaphore(CONCURRENCY)
         results = await asyncio.gather(*(scan_university(ctx, u, sem) for u in unis))
+        slug_cache = load_json(DATA / "jobsac_slugs.json", {})
+        jsem = asyncio.Semaphore(3)  # be gentle with jobs.ac.uk
+        jac = {r["name"]: r for r in await asyncio.gather(*(jobsac_scan(ctx, u, jsem, slug_cache) for u in unis))}
+        (DATA / "jobsac_slugs.json").write_text(json.dumps(slug_cache, indent=1, sort_keys=True))
 
-        # what is new today?
-        today_keys, new_items = set(), []
+        # merge both sources; the same post on the uni site and on jobs.ac.uk counts once
+        def tkey(uni, title):
+            t = re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+            return f"{uni}|{t}" if len(t) >= 25 else None
+        seen_titles = {v["tkey"]: k for k, v in seen.items() if v.get("tkey")}
+        today_keys, new_items, today_titles = set(), [], {}
         for r in results:
             for j in r["jobs"]:
+                j["source"] = "university site"
+            for j in jac.get(r["name"], {}).get("jobs", []):
+                j["source"] = "jobs.ac.uk"
+            for j in r["jobs"] + jac.get(r["name"], {}).get("jobs", []):
+                tk = tkey(r["name"], j["title"])
+                if tk and tk in today_titles:          # duplicate of a post already handled today
+                    continue
                 k = key_for(r["name"], j["href"], j["title"])
+                if k not in seen and tk and tk in seen_titles:   # seen before under the other source
+                    k = seen_titles[tk]
+                if tk:
+                    today_titles[tk] = k
                 today_keys.add(k)
                 if k in seen:
                     seen[k]["last_seen"] = TODAY
                     seen[k]["missing_days"] = 0
                 else:
-                    seen[k] = {"university": r["name"], "title": j["title"], "url": j["href"],
-                               "first_seen": TODAY, "last_seen": TODAY, "missing_days": 0}
-                    new_items.append({"key": k, "university": r["name"], "title": j["title"],
-                                      "url": j["href"], "listing_context": j["ctx"]})
+                    seen[k] = {"university": r["name"], "title": j["title"], "url": j["href"], "source": j["source"],
+                               "tkey": tk, "first_seen": TODAY, "last_seen": TODAY, "missing_days": 0}
+                    new_items.append({"key": k, "university": r["name"], "title": j["title"], "url": j["href"],
+                                      "source": j["source"], "listing_context": j["ctx"], "_oracle": j.get("oracle")})
         for k, v in seen.items():
             if k not in today_keys:
                 v["missing_days"] = v.get("missing_days", 0) + 1
 
         # full advert text for each new posting
-        texts = await asyncio.gather(*(fetch_text(ctx, it["url"], sem) for it in new_items))
+        texts = await asyncio.gather(*(fetch_text(ctx, it["url"], sem, it.pop("_oracle")) for it in new_items))
         for it, t in zip(new_items, texts):
             it["advert_text"] = t
             it["profile_score"] = score(it["title"] + " " + t)
@@ -309,16 +538,18 @@ async def main():
 
     with open(DATA / "open_research_jobs.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["university", "title", "url", "first_seen", "last_seen"])
+        w.writerow(["university", "title", "url", "source", "first_seen", "last_seen"])
         for v in sorted(seen.values(), key=lambda v: (v["university"], v["title"])):
             if v.get("missing_days", 0) == 0:
-                w.writerow([v["university"], v["title"], v["url"], v["first_seen"], v["last_seen"]])
+                w.writerow([v["university"], v["title"], v["url"], v.get("source", ""), v["first_seen"], v["last_seen"]])
 
     with open(DATA / "coverage.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
-        w.writerow(["university", "status", "research_links", "all_links", "url", "followed", "error"])
+        w.writerow(["university", "status", "research_links", "all_links", "jobsac_research", "jobsac_slug", "url", "followed", "error"])
         for r in results:
-            w.writerow([r["name"], r["status"], r["research"], r["links"], r["url"], r["followed"], r["error"]])
+            ja = jac.get(r["name"], {})
+            w.writerow([r["name"], r["status"], r["research"], r["links"], len(ja.get("jobs", [])), ja.get("slug") or ja.get("status", ""),
+                        r["url"], r["followed"], r["error"]])
 
     ok = [r for r in results if r["status"] == "ok"]
     zero = [r for r in ok if r["research"] == 0]
@@ -327,17 +558,18 @@ async def main():
              f"- Universities scanned: {len(results)}",
              f"- Pages loaded fine: {len(ok)} ({len(ok) - len(zero)} with research posts, {len(zero)} with none listed today)",
              f"- Problems: {len(bad)}",
-             f"- Research postings listed today: {len(today_keys)}",
+             f"- jobs.ac.uk employer pages found: {sum(1 for v in jac.values() if v.get('slug'))} of {len(jac)}",
+             f"- Research postings listed today (both sources, de-duplicated): {len(today_keys)}",
              f"- **New since last run: {len(new_items)}**" + (" (first run: everything counts as new)" if first_run else ""),
              "", "## New postings", ""]
     for it in new_items:
-        lines.append(f"- [{it['title']}]({it['url']}) — {it['university']} (score {it['profile_score']})")
+        lines.append(f"- [{it['title']}]({it['url']}) — {it['university']} via {it['source']} (score {it['profile_score']})")
     lines += ["", "## Problems", ""]
     for r in bad:
         lines.append(f"- {r['name']}: {r['status']} {r['error']} <{r['url']}>")
-    lines += ["", "## Loaded but no research posts found (check if this persists)", ""]
+    lines += ["", "## Loaded but no research posts found on the university site (check if this persists)", ""]
     for r in zero:
-        lines.append(f"- {r['name']} ({r['links']} links) <{r['url']}>")
+        lines.append(f"- {r['name']} ({r['links']} links; jobs.ac.uk: {len(jac.get(r['name'], {}).get('jobs', []))} research) <{r['url']}>")
     (REPORTS / f"{TODAY}.md").write_text("\n".join(lines) + "\n")
     (REPORTS / "latest.md").write_text("\n".join(lines) + "\n")
     print("\n".join(lines[:8]))

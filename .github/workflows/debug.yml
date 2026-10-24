@@ -7,7 +7,7 @@ on:
         description: "'|'-separated university name fragments, or ZERO for all sites with no research posts"
         default: "ZERO"
       script:
-        description: "debug_dump.py or probe.py"
+        description: "script to run"
         default: "debug_dump.py"
 
 permissions:
