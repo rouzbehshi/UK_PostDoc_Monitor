@@ -26,10 +26,14 @@ jobs:
       - run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
-      - run: python ${{ inputs.script }}
+      - run: |
+          mkdir -p debug
+          set -o pipefail
+          python -u ${{ inputs.script }} 2>&1 | tee debug/run.log
         env:
           SITES: ${{ inputs.sites }}
       - name: Push dumps to the debug branch
+        if: always()
         run: |
           git config user.name "uk-postdoc-monitor-bot"
           git config user.email "actions@users.noreply.github.com"
