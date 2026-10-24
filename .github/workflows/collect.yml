@@ -3,9 +3,11 @@ name: Collect university research jobs
 on:
   schedule:
     - cron: "30 4 * * *"   # every day 04:30 UTC (05:30-06:30 in Italy)
-  workflow_dispatch: {}     # "Run workflow" button for manual runs
-  push:
-    paths: ["universities.csv", "collector.py", ".github/workflows/collect.yml"]
+  workflow_dispatch:        # "Run workflow" button for manual runs
+    inputs:
+      reset:
+        description: "Forget everything seen so far and start a fresh baseline (yes/no)"
+        default: "no"
 
 permissions:
   contents: write
@@ -33,6 +35,7 @@ jobs:
 
       - name: Collect
         run: |
+          if [ "${{ inputs.reset }}" = "yes" ]; then rm -f data/seen.json; fi
           mkdir -p logs
           set -o pipefail
           python -u collector.py 2>&1 | tee logs/latest_run.log
