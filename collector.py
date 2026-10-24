@@ -35,7 +35,7 @@ REPORTS = Path(os.environ.get("REPORTS_DIR", ROOT / "reports"))
 UNIS_CSV = Path(os.environ.get("UNIS_CSV", ROOT / "universities.csv"))
 TODAY = dt.date.today().isoformat()
 
-CONCURRENCY = int(os.environ.get("CONCURRENCY", "6"))
+CONCURRENCY = int(os.environ.get("CONCURRENCY", "5"))
 PAGE_TIMEOUT_MS = 45_000
 MAX_PAGES = 6            # pagination / "show more" clicks per site
 SITE_TIMEOUT_S = 240     # give up on one site after this long
@@ -43,7 +43,8 @@ BACKLOG_MIN_SCORE = 3    # first run only: minimum topic score for a post to be 
 MAX_TEXT = 20_000        # characters of advert text kept per posting
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0 Safari/537.36")
-ONLY = os.environ.get("ONLY")  # optional: substring filter on university name, for testing
+ONLY = os.environ.get("ONLY")
+BROWSER = None  # optional: substring filter on university name, for testing
 
 # Titles we keep. Deliberately broad on topic: the topic is judged later from the full text.
 RESEARCH_RE = re.compile(
@@ -363,22 +364,32 @@ async def scan_university(ctx, uni: dict, sem) -> dict:
         res["status"] = "no_url"
         return res
     async with sem:
-        for i, url in enumerate(urls):
-            res.update(status="ok", error="", url=url)
+        site_ctx = await BROWSER.new_context(user_agent=UA, locale="en-GB", viewport={"width": 1366, "height": 900})
+        site_ctx.set_default_timeout(20000)
+        try:
+            for i, url in enumerate(urls):
+                res.update(status="ok", error="", url=url)
+                try:
+                    jobs = await asyncio.wait_for(scan_page_tree(site_ctx, url, urls, res), timeout=SITE_TIMEOUT_S)
+                    uniq = {}
+                    for j in jobs:
+                        uniq.setdefault(norm_url(j["href"]), j)
+                    res["jobs"] = list(uniq.values())
+                    res["research"] = len(res["jobs"])
+                    if res["status"] == "ok" and res["links"] < 5:
+                        res["status"] = "few_links"
+                except BaseException as e:  # includes timeouts/cancellations of this one site
+                    if isinstance(e, KeyboardInterrupt):
+                        raise
+                    res["status"] = "error"
+                    res["error"] = f"{type(e).__name__}: {(str(e).splitlines() or [''])[0][:200]}"
+                if res["research"] or (res["status"] == "ok" and i == 0 and res["links"] >= 15):
+                    break
+        finally:
             try:
-                jobs = await asyncio.wait_for(scan_page_tree(ctx, url, urls, res), timeout=SITE_TIMEOUT_S)
-                uniq = {}
-                for j in jobs:
-                    uniq.setdefault(norm_url(j["href"]), j)
-                res["jobs"] = list(uniq.values())
-                res["research"] = len(res["jobs"])
-                if res["status"] == "ok" and res["links"] < 5:
-                    res["status"] = "few_links"
-            except Exception as e:
-                res["status"] = "error"
-                res["error"] = f"{type(e).__name__}: {str(e).splitlines()[0][:200]}"
-            if res["research"] or (res["status"] == "ok" and i == 0 and res["links"] >= 15):
-                break
+                await asyncio.wait_for(site_ctx.close(), timeout=20)
+            except BaseException:
+                pass
     print(f"[{res['status']:9}] {res['research']:3} research / {res['links']:4} links  {uni['name']}", flush=True)
     return res
 
@@ -512,7 +523,8 @@ async def main():
     first_run = not seen
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch()
+        global BROWSER
+        browser = BROWSER = await p.chromium.launch(args=["--disable-dev-shm-usage"])
         ctx = await browser.new_context(user_agent=UA, locale="en-GB", viewport={"width": 1366, "height": 900})
         sem = asyncio.Semaphore(CONCURRENCY)
         results = await asyncio.gather(*(scan_university(ctx, u, sem) for u in unis))
@@ -616,5 +628,28 @@ async def main():
     print("\n".join(lines[:8]))
 
 
+def _heartbeat():
+    import threading, time
+    def run():
+        t0 = time.time()
+        while True:
+            time.sleep(60)
+            try:
+                mem = {l.split(":")[0]: l.split()[1] for l in open("/proc/meminfo") if l.startswith(("MemAvailable", "MemTotal"))}
+            except Exception:
+                mem = {}
+            print(f"[heartbeat] {int(time.time() - t0)}s elapsed, memory available {int(mem.get('MemAvailable', 0)) // 1024} MB", flush=True)
+    threading.Thread(target=run, daemon=True).start()
+
+
 if __name__ == "__main__":
-    asyncio.run(main())
+    import faulthandler, signal, traceback
+    faulthandler.enable()
+    faulthandler.register(signal.SIGTERM, all_threads=True)
+    _heartbeat()
+    try:
+        asyncio.run(main())
+    except BaseException:
+        traceback.print_exc()
+        sys.stdout.flush()
+        raise
