@@ -1,29 +1,356 @@
 [ok       ]   0 research /   52 links  Arden University
-[ok       ]   0 research /   42 links  University of the Arts London
 [ok       ]   1 research /  105 links  Aberystwyth University
-[ok       ]   0 research /  191 links  Arts University Bournemouth
+[ok       ]   0 research /   42 links  University of the Arts London
 [ok       ]   0 research /   25 links  Abertay University
-[ok       ]   4 research /   46 links  Aston University
-[ok       ]   0 research /  107 links  Arts University Plymouth
 [ok       ]   1 research /   69 links  Anglia Ruskin University
+[ok       ]   0 research /  191 links  Arts University Bournemouth
+[ok       ]   4 research /   46 links  Aston University
 [ok       ]   0 research /   24 links  Bath Spa University
+[ok       ]   0 research /  107 links  Arts University Plymouth
+[ok       ]   0 research /   57 links  Bangor University
 [ok       ]  11 research /   96 links  University of Bath
 [ok       ]   1 research /   12 links  University of Bedfordshire
-[ok       ]   0 research /   57 links  Bangor University
 [ok       ]   2 research /   34 links  Birkbeck, University of London
-[few_links]   0 research /    0 links  Birmingham Newman University
 [ok       ]   1 research /   38 links  Birmingham City University
 [ok       ]   0 research /   50 links  University of Birmingham
-[ok       ]   1 research /   40 links  Bournemouth University
-[ok       ]   1 research /   44 links  University of Brighton
+[few_links]   0 research /    0 links  Birmingham Newman University
 [ok       ]   0 research /   67 links  BIMM University
+[ok       ]   1 research /   40 links  Bournemouth University
 [ok       ]   1 research /  492 links  University of Aberdeen
+[ok       ]   1 research /   44 links  University of Brighton
 [ok       ]   0 research /  114 links  University of Bradford
-[ok       ]   0 research /   60 links  BPP University
-[ok       ]   2 research / 1258 links  Buckinghamshire New University
+[heartbeat] 60s elapsed, memory available 14519 MB
 [ok       ]  11 research /  165 links  Brunel University of London
 [ok       ]  18 research /  159 links  University of Bristol
+[ok       ]   0 research /   60 links  BPP University
+[ok       ]   2 research / 1258 links  Buckinghamshire New University
 [ok       ]  44 research /  358 links  University of Cambridge
 [ok       ]   1 research /   34 links  Cardiff Metropolitan University
-[ok       ]   0 research /  424 links  University of Buckingham
 [ok       ]   0 research /   51 links  Canterbury Christ Church University
+[ok       ]   0 research /   25 links  University of Chichester
+[ok       ]   0 research /  137 links  University of Chester
+[ok       ]  10 research /   81 links  Cardiff University
+[ok       ]   1 research /   67 links  Coventry University
+[ok       ]   0 research /  166 links  City St George's, University of London
+[ok       ]   0 research /  135 links  University for the Creative Arts
+[ok       ]   2 research /  142 links  Cranfield University
+[blocked  ]   0 research /    0 links  University of Dundee
+[ok       ]   0 research /  139 links  University of Cumbria
+[heartbeat] 120s elapsed, memory available 14222 MB
+[ok       ]   2 research /   44 links  Durham University
+[ok       ]   2 research /  107 links  University of Derby
+[error    ]   0 research /    0 links  University of East Anglia
+[ok       ]   1 research /  244 links  De Montfort University
+[ok       ]   2 research /   47 links  Edge Hill University
+[ok       ]  25 research /   59 links  University of Edinburgh
+[ok       ]   0 research /   37 links  Edinburgh Napier University
+[ok       ]   0 research /  125 links  University of East London
+[blocked  ]   0 research /    0 links  Glasgow Caledonian University
+[ok       ]   0 research /   47 links  University of Essex
+[ok       ]   0 research /  125 links  Falmouth University
+[ok       ]  13 research /  105 links  University of Exeter
+[ok       ]   2 research /   25 links  University of Gloucestershire
+[ok       ]   2 research /  242 links  University of Glasgow
+[ok       ]   3 research /   41 links  University of Greenwich
+[ok       ]   0 research /   94 links  University of Greater Manchester
+[ok       ]   0 research /  115 links  Harper Adams University
+[ok       ]   0 research /  132 links  Goldsmiths, University of London
+[heartbeat] 180s elapsed, memory available 14313 MB
+[ok       ]   0 research /   77 links  Hartpury University
+[ok       ]   4 research /   23 links  Heriot-Watt University
+[ok       ]   0 research /   54 links  Health Sciences University
+[ok       ]   0 research /   68 links  University of the Highlands and Islands
+[ok       ]   0 research /   25 links  University of Hertfordshire
+[ok       ]   0 research /   18 links  University of Huddersfield
+[ok       ]   3 research /   59 links  University of Hull
+[ok       ]   0 research /  150 links  Keele University
+[ok       ]   2 research /   73 links  Kingston University
+[ok       ]  34 research /  204 links  Imperial College London
+[ok       ]   9 research /   62 links  Lancaster University
+[ok       ]   0 research /  121 links  University of Lancashire
+[ok       ]   0 research /   34 links  University of Law
+[heartbeat] 240s elapsed, memory available 10985 MB
+[ok       ]   0 research /   32 links  Leeds Arts University
+[ok       ]  18 research /  162 links  King's College London
+[ok       ]  15 research /   70 links  University of Leeds
+[ok       ]   0 research /   27 links  Leeds Trinity University
+[ok       ]   1 research /  567 links  Leeds Beckett University
+[ok       ]   1 research /   25 links  Lincoln Bishop University
+[ok       ]   4 research /   48 links  University of Lincoln
+[ok       ]  10 research /   80 links  University of Leicester
+[ok       ]   4 research /   36 links  Liverpool John Moores University
+[ok       ]   0 research /    8 links  University of Liverpool
+[ok       ]   0 research /   14 links  London School of Economics and Political Science
+[blocked  ]   0 research /    0 links  London South Bank University
+[heartbeat] 300s elapsed, memory available 10218 MB
+[error    ]   0 research /  215 links  University of Buckingham
+[ok       ]   0 research /    8 links  University of London
+[ok       ]   0 research /  122 links  London Metropolitan University
+[ok       ]   8 research /   35 links  University of Manchester
+Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+[ok       ]   5 research /   62 links  Manchester Metropolitan University
+[ok       ]  48 research /  218 links  Loughborough University
+[ok       ]   0 research /  125 links  Middlesex University
+[ok       ]   9 research /   55 links  Newcastle University
+[ok       ]   0 research /   37 links  University of Northampton
+[ok       ]   3 research /  187 links  Northumbria University
+[ok       ]   0 research / 3964 links  Liverpool Hope University
+[ok       ]   0 research /  126 links  Norwich University of the Arts
+[heartbeat] 360s elapsed, memory available 10640 MB
+[ok       ]   4 research /   19 links  Nottingham Trent University
+[ok       ]  17 research /  110 links  University of Nottingham
+[blocked  ]   0 research /    0 links  University of Oxford
+[ok       ]   0 research /  196 links  Northeastern University London
+[ok       ]   2 research /  101 links  Oxford Brookes University
+[ok       ]   4 research /  124 links  Open University
+[ok       ]   1 research /  105 links  University of Portsmouth
+[ok       ]   0 research /   33 links  University of Plymouth
+[ok       ]  15 research /  168 links  Queen Mary University of London
+[ok       ]   0 research /   27 links  Plymouth Marjon University
+[ok       ]   1 research /  241 links  University of Reading
+[ok       ]   0 research /   79 links  Ravensbourne University London
+[ok       ]   0 research /   23 links  Richmond American University London
+[heartbeat] 420s elapsed, memory available 10589 MB
+[ok       ]   0 research /   17 links  Regent's University London
+[ok       ]   0 research /   50 links  Robert Gordon University
+[ok       ]   0 research /  165 links  Queen Margaret University
+[error    ]   0 research /    0 links  Queen's University Belfast
+[ok       ]   0 research /  110 links  Royal Agricultural University
+[ok       ]   0 research /   27 links  University of Roehampton
+[ok       ]   1 research /   45 links  Royal Veterinary College
+[ok       ]   2 research /   51 links  Royal Holloway, University of London
+[error    ]   0 research /  152 links  University of Kent
+[blocked  ]   0 research /    0 links  University of South Wales
+[ok       ]   2 research /   50 links  SOAS University of London
+Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+[ok       ]   0 research /   44 links  Solent University
+[ok       ]   0 research /  131 links  Sheffield Hallam University
+[ok       ]  13 research /  119 links  University of Sheffield
+[ok       ]   0 research /  145 links  University of Southampton
+[ok       ]   0 research /   89 links  University of Salford
+[ok       ]   1 research /  203 links  University of Stirling
+[ok       ]   0 research /   38 links  University of St Andrews
+[heartbeat] 480s elapsed, memory available 14347 MB
+[ok       ]   0 research /  119 links  University of Staffordshire
+[ok       ]   0 research /  178 links  University of Strathclyde
+[ok       ]   9 research /   54 links  University of Surrey
+[ok       ]   0 research /   59 links  University of Sunderland
+[ok       ]   0 research /  123 links  University of Suffolk
+[ok       ]  10 research /   40 links  University of Sussex
+[error    ]   0 research /    0 links  University College Birmingham
+[blocked  ]   0 research /    0 links  University College London
+[ok       ]   9 research /  248 links  Swansea University
+[ok       ]   0 research /   29 links  Teesside University
+[ok       ]   7 research /   60 links  Ulster University
+[ok       ]   0 research /   29 links  University of Wales Trinity Saint David
+[ok       ]  11 research /   90 links  University of Warwick
+[ok       ]   0 research /  128 links  University of West London
+[ok       ]   0 research /   20 links  University of Winchester
+[ok       ]   1 research /   18 links  University of Westminster
+[heartbeat] 540s elapsed, memory available 14321 MB
+[ok       ]   2 research /  468 links  University of Worcester
+[ok       ]   0 research /   35 links  University of Wolverhampton
+[ok       ]   2 research /   30 links  York St John University
+[ok       ]   0 research /  556 links  St Mary's University, Twickenham
+[ok       ]   0 research /  150 links  Wrexham University
+[ok       ]   0 research /   72 links  University of the West of Scotland
+[ok       ]   1 research /   45 links  London School of Hygiene & Tropical Medicine
+[ok       ]   0 research /   23 links  London Business School
+[ok       ]   7 research /  306 links  University of York
+[ok       ]   3 research /   47 links  Royal College of Art
+[ok       ]   0 research /   31 links  Institute of Cancer Research
+[ok       ]   0 research /   82 links  Courtauld Institute of Art
+[ok       ]   1 research /   57 links  Liverpool School of Tropical Medicine
+[blocked  ]   0 research /    0 links  Royal Academy of Music
+[ok       ]   2 research /  398 links  Guildhall School of Music & Drama
+[ok       ]   0 research /  101 links  Royal College of Music
+[ok       ]   0 research /  233 links  Royal Conservatoire of Scotland
+[blocked  ]   0 research /    0 links  Royal Central School of Speech and Drama
+[ok       ]   1 research /   74 links  Glasgow School of Art
+[heartbeat] 600s elapsed, memory available 14011 MB
+[ok       ]   0 research /  295 links  Royal Northern College of Music
+[ok       ]   0 research /  161 links  Trinity Laban Conservatoire of Music and Dance
+[ok       ]  15 research /  406 links  University of the West of England
+[ok       ]   0 research /   93 links  University College of Estate Management
+[ok       ]   0 research /  658 links  SRUC (Scotland's Rural College)
+[jobs.ac.uk]   0 research /  10 jobs  University of Aberdeen (university-of-aberdeen)
+[jobs.ac.uk]   0 research /   1 jobs  Aberystwyth University (aberystwyth-university)
+[jobs.ac.uk]   1 research /   2 jobs  Anglia Ruskin University (anglia-ruskin-university)
+[jobs.ac.uk]   0 research /   1 jobs  Abertay University (abertay-university)
+[jobs.ac.uk]   0 research /   6 jobs  University of the Arts London (university-of-the-arts-london)
+[jobs.ac.uk]   0 research /   1 jobs  Arden University (arden-university)
+[jobs.ac.uk]   1 research /   9 jobs  Aston University (aston-university)
+[jobs.ac.uk]   0 research /   1 jobs  Bangor University (bangor-university)
+[jobs.ac.uk]   0 research /   6 jobs  Bath Spa University (bath-spa-university)
+[jobs.ac.uk]   0 research /   0 jobs  Arts University Bournemouth (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Arts University Plymouth (employer not found)
+[jobs.ac.uk]   0 research /   1 jobs  University of Bedfordshire (university-of-bedfordshire)
+[jobs.ac.uk]   9 research /  25 jobs  University of Bath (university-of-bath)
+[jobs.ac.uk]   2 research /  20 jobs  Birkbeck, University of London (birkbeck-university-of-london)
+[jobs.ac.uk]  11 research /  25 jobs  University of Birmingham (university-of-birmingham)
+[jobs.ac.uk]   1 research /   3 jobs  Birmingham City University (birmingham-city-university)
+[jobs.ac.uk]   0 research /   4 jobs  Birmingham Newman University (birmingham-newman-university)
+[jobs.ac.uk]   0 research /   0 jobs  BIMM University (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  BPP University (employer not found)
+[jobs.ac.uk]   0 research /   7 jobs  Bournemouth University (bournemouth-university)
+[jobs.ac.uk]   0 research /   1 jobs  University of Brighton (university-of-brighton)
+[jobs.ac.uk]   0 research /   9 jobs  University of Bradford (university-of-bradford)
+[jobs.ac.uk]   0 research /   0 jobs  Brunel University of London (employer not found)
+[jobs.ac.uk]   0 research /   1 jobs  University of Buckingham (university-of-buckingham)
+[jobs.ac.uk]   0 research /   3 jobs  Buckinghamshire New University (buckinghamshire-new-university)
+[jobs.ac.uk]  12 research /  25 jobs  University of Bristol (university-of-bristol)
+[jobs.ac.uk]   6 research /  25 jobs  University of Cambridge (university-of-cambridge)
+[jobs.ac.uk]   0 research /   7 jobs  Canterbury Christ Church University (canterbury-christ-church-university)
+[jobs.ac.uk]   0 research /   1 jobs  Cardiff Metropolitan University (cardiff-metropolitan-university)
+[jobs.ac.uk]   5 research /  12 jobs  Cardiff University (cardiff-university)
+[jobs.ac.uk]   0 research /   4 jobs  University of Chester (university-of-chester)
+[jobs.ac.uk]   0 research /   3 jobs  University of Chichester (university-of-chichester)
+[jobs.ac.uk]   0 research /   2 jobs  Coventry University (coventry-university-group)
+[jobs.ac.uk]   2 research /  25 jobs  City St George's, University of London (city-st-georges-university-of-london)
+[jobs.ac.uk]   2 research /   3 jobs  Cranfield University (cranfield-university)
+[jobs.ac.uk]   0 research /   8 jobs  University for the Creative Arts (university-for-the-creative-arts)
+[jobs.ac.uk]   0 research /   9 jobs  University of Derby (university-of-derby)
+[jobs.ac.uk]   0 research /   4 jobs  De Montfort University (de-montfort-university)
+[jobs.ac.uk]   5 research /  11 jobs  University of Dundee (university-of-dundee)
+[jobs.ac.uk]   2 research /  14 jobs  Durham University (durham-university)
+[jobs.ac.uk]   0 research /   0 jobs  University of Cumbria (employer not found)
+[jobs.ac.uk]   0 research /   5 jobs  University of East London (university-of-east-london)
+[jobs.ac.uk]   0 research /   3 jobs  Edge Hill University (edge-hill-university)
+[jobs.ac.uk]   1 research /  25 jobs  University of East Anglia (university-of-east-anglia)
+[jobs.ac.uk]  15 research /  25 jobs  University of Edinburgh (the-university-of-edinburgh)
+[jobs.ac.uk]   4 research /  24 jobs  University of Essex (university-of-essex)
+[jobs.ac.uk]   0 research /   0 jobs  Edinburgh Napier University (employer not found)
+[jobs.ac.uk]   6 research /  21 jobs  University of Exeter (university-of-exeter)
+[jobs.ac.uk]   0 research /   1 jobs  Falmouth University (falmouth-university)
+[jobs.ac.uk]   0 research /   3 jobs  Glasgow Caledonian University (glasgow-caledonian-university)
+[jobs.ac.uk]  15 research /  25 jobs  University of Glasgow (university-of-glasgow)
+[jobs.ac.uk]   0 research /   4 jobs  University of Gloucestershire (university-of-gloucestershire)
+[jobs.ac.uk]   0 research /  10 jobs  Goldsmiths, University of London (goldsmiths-university-of-london)
+[jobs.ac.uk]   0 research /   5 jobs  University of Greater Manchester (university-of-greater-manchester)
+[jobs.ac.uk]   0 research /   3 jobs  Harper Adams University (harper-adams-university)
+[jobs.ac.uk]   0 research /   0 jobs  University of Greenwich (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Hartpury University (employer not found)
+[jobs.ac.uk]   1 research /   9 jobs  University of Hertfordshire (university-of-hertfordshire)
+[jobs.ac.uk]   0 research /   1 jobs  University of the Highlands and Islands (university-of-the-highlands-and-islands)
+[jobs.ac.uk]   0 research /   0 jobs  Heriot-Watt University (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Health Sciences University (employer not found)
+[jobs.ac.uk]   0 research /  11 jobs  University of Huddersfield (university-of-huddersfield)
+[heartbeat] 660s elapsed, memory available 14723 MB
+[jobs.ac.uk]   3 research /   6 jobs  University of Hull (university-of-hull)
+[jobs.ac.uk]   0 research /   8 jobs  Keele University (keele-university)
+[jobs.ac.uk]  12 research /  25 jobs  Imperial College London (imperial-college-london)
+[jobs.ac.uk]   0 research /   0 jobs  University of Kent (employer not found)
+[jobs.ac.uk]   0 research /   5 jobs  University of Lancashire (university-of-lancashire)
+[jobs.ac.uk]   2 research /  17 jobs  Kingston University (kingston-university)
+[jobs.ac.uk]   6 research /  25 jobs  King's College London (kings-college-london)
+[jobs.ac.uk]   6 research /  12 jobs  Lancaster University (lancaster-university)
+[jobs.ac.uk]   0 research /   1 jobs  Leeds Arts University (leeds-arts-university)
+[jobs.ac.uk]   0 research /   3 jobs  Leeds Trinity University (leeds-trinity-university)
+[jobs.ac.uk]   1 research /  10 jobs  Leeds Beckett University (leeds-beckett-university)
+[jobs.ac.uk]   7 research /  15 jobs  University of Leicester (university-of-leicester)
+[jobs.ac.uk]   0 research /   1 jobs  Lincoln Bishop University (lincoln-bishop-university)
+[jobs.ac.uk]   7 research /  22 jobs  University of Leeds (university-of-leeds)
+[jobs.ac.uk]   0 research /   2 jobs  Liverpool Hope University (liverpool-hope-university)
+[jobs.ac.uk]   0 research /   0 jobs  University of Law (employer not found)
+[jobs.ac.uk]   1 research /  19 jobs  Liverpool John Moores University (liverpool-john-moores-university)
+[jobs.ac.uk]   0 research /   1 jobs  London Metropolitan University (london-metropolitan-university)
+[jobs.ac.uk]   7 research /  24 jobs  University of Liverpool (university-of-liverpool)
+[jobs.ac.uk]   0 research /   0 jobs  University of Lincoln (employer not found)
+[jobs.ac.uk]   0 research /   1 jobs  University of London (university-of-london)
+[jobs.ac.uk]   0 research /   3 jobs  London South Bank University (london-south-bank-university)
+[jobs.ac.uk]   5 research /  25 jobs  London School of Economics and Political Science (london-school-of-economics-and-political-science)
+[jobs.ac.uk]   8 research /  25 jobs  Loughborough University (loughborough-university)
+[jobs.ac.uk]   0 research /   2 jobs  Middlesex University (middlesex-university)
+[jobs.ac.uk]   3 research /  20 jobs  Manchester Metropolitan University (manchester-metropolitan-university)
+[jobs.ac.uk]   7 research /  25 jobs  University of Manchester (the-university-of-manchester)
+[jobs.ac.uk]   0 research /   1 jobs  University of Northampton (university-of-northampton)
+[jobs.ac.uk]   1 research /   7 jobs  Northeastern University London (northeastern-university-london)
+[jobs.ac.uk]   7 research /  25 jobs  Newcastle University (newcastle-university)
+[jobs.ac.uk]   0 research /   5 jobs  Northumbria University (northumbria-university)
+[jobs.ac.uk]   1 research /   2 jobs  Nottingham Trent University (nottingham-trent-university)
+[jobs.ac.uk]   0 research /   4 jobs  Norwich University of the Arts (norwich-university-of-the-arts)
+[jobs.ac.uk]   0 research /   3 jobs  Open University (the-open-university)
+[jobs.ac.uk]   0 research /  11 jobs  Oxford Brookes University (oxford-brookes-university)
+[jobs.ac.uk]   5 research /  25 jobs  University of Oxford (university-of-oxford)
+[jobs.ac.uk]   4 research /  21 jobs  University of Nottingham (university-of-nottingham)
+[jobs.ac.uk]   0 research /   2 jobs  Plymouth Marjon University (plymouth-marjon-university)
+[jobs.ac.uk]   0 research /   0 jobs  Queen Margaret University (employer not found)
+[jobs.ac.uk]   2 research /  21 jobs  University of Plymouth (university-of-plymouth)
+[jobs.ac.uk]  11 research /  15 jobs  Queen's University Belfast (queens-university-belfast)
+[jobs.ac.uk]   0 research /   0 jobs  University of Portsmouth (employer not found)
+[jobs.ac.uk]   9 research /  25 jobs  Queen Mary University of London (queen-mary-university-of-london)
+[jobs.ac.uk]   0 research /   1 jobs  Ravensbourne University London (ravensbourne-university-london)
+[jobs.ac.uk]   0 research /   2 jobs  Regent's University London (regents-university-london)
+[jobs.ac.uk]   3 research /  24 jobs  University of Reading (university-of-reading)
+[jobs.ac.uk]   0 research /   9 jobs  University of Roehampton (university-of-roehampton)
+[jobs.ac.uk]   0 research /   0 jobs  Robert Gordon University (employer not found)
+[jobs.ac.uk]   0 research /   3 jobs  Royal Agricultural University (royal-agricultural-university)
+[jobs.ac.uk]   0 research /   0 jobs  Royal Veterinary College (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Richmond American University London (employer not found)
+[jobs.ac.uk]   2 research /   9 jobs  Royal Holloway, University of London (royal-holloway-university-of-london)
+[jobs.ac.uk]   2 research /  15 jobs  University of Salford (university-of-salford)
+[jobs.ac.uk]   0 research /   7 jobs  Sheffield Hallam University (sheffield-hallam-university)
+[jobs.ac.uk]   0 research /   7 jobs  SOAS University of London (soas-university-of-london)
+[jobs.ac.uk]   1 research /  10 jobs  University of South Wales (university-of-south-wales)
+[jobs.ac.uk]   0 research /   0 jobs  Solent University (employer not found)
+[jobs.ac.uk]   7 research /  25 jobs  University of Sheffield (university-of-sheffield)
+[jobs.ac.uk]   5 research /  14 jobs  University of St Andrews (university-of-st-andrews)
+[jobs.ac.uk]  16 research /  25 jobs  University of Southampton (university-of-southampton)
+[jobs.ac.uk]   0 research /   1 jobs  University of Staffordshire (university-of-staffordshire)
+[jobs.ac.uk]   0 research /   6 jobs  St Mary's University, Twickenham (st-marys-university-twickenham)
+[jobs.ac.uk]   3 research /   8 jobs  University of Strathclyde (university-of-strathclyde)
+[jobs.ac.uk]   0 research /   2 jobs  University of Stirling (university-of-stirling)
+[jobs.ac.uk]   7 research /  25 jobs  University of Surrey (university-of-surrey)
+[jobs.ac.uk]   7 research /   8 jobs  University of Sussex (university-of-sussex)
+[jobs.ac.uk]   0 research /   0 jobs  University of Suffolk (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  University of Sunderland (employer not found)
+[jobs.ac.uk]   3 research /  12 jobs  Swansea University (swansea-university)
+[jobs.ac.uk]   1 research /   3 jobs  Teesside University (teesside-university)
+[jobs.ac.uk]   0 research /  10 jobs  University College Birmingham (university-college-birmingham)
+[jobs.ac.uk]   2 research /   3 jobs  Ulster University (ulster-university)
+[jobs.ac.uk]   0 research /   9 jobs  University of Wales Trinity Saint David (university-of-wales-trinity-saint-david)
+[jobs.ac.uk]  10 research /  25 jobs  University College London (ucl)
+[jobs.ac.uk]   0 research /   7 jobs  University of the West of England (uwe-bristol)
+[jobs.ac.uk]   1 research /   3 jobs  University of the West of Scotland (university-of-the-west-of-scotland)
+[jobs.ac.uk]   4 research /  25 jobs  University of Warwick (university-of-warwick)
+[jobs.ac.uk]   0 research /   2 jobs  University of West London (university-of-west-london)
+[jobs.ac.uk]   0 research /   3 jobs  University of Winchester (university-of-winchester)
+[jobs.ac.uk]   0 research /   1 jobs  University of Westminster (university-of-westminster)
+[jobs.ac.uk]   0 research /   4 jobs  University of Wolverhampton (university-of-wolverhampton)
+[jobs.ac.uk]   0 research /   1 jobs  Wrexham University (wrexham-university)
+[jobs.ac.uk]   0 research /   5 jobs  University of Worcester (university-of-worcester)
+[jobs.ac.uk]   0 research /   1 jobs  York St John University (york-st-john-university)
+[jobs.ac.uk]   0 research /   1 jobs  Institute of Cancer Research (the-institute-of-cancer-research)
+[jobs.ac.uk]   0 research /   1 jobs  London Business School (london-business-school)
+[jobs.ac.uk]   5 research /  10 jobs  University of York (university-of-york)
+[heartbeat] 720s elapsed, memory available 14713 MB
+[jobs.ac.uk]   3 research /   6 jobs  Royal College of Art (royal-college-of-art)
+[jobs.ac.uk]   0 research /   0 jobs  London School of Hygiene & Tropical Medicine (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Courtauld Institute of Art (employer not found)
+[jobs.ac.uk]   1 research /   1 jobs  Liverpool School of Tropical Medicine (liverpool-school-of-tropical-medicine)
+[jobs.ac.uk]   0 research /   3 jobs  Royal College of Music (royal-college-of-music)
+[jobs.ac.uk]   0 research /   0 jobs  Royal Northern College of Music (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Royal Academy of Music (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Guildhall School of Music & Drama (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Royal Conservatoire of Scotland (employer not found)
+[jobs.ac.uk]   0 research /   2 jobs  Royal Central School of Speech and Drama (the-royal-central-school-of-speech-and-drama)
+[jobs.ac.uk]   0 research /   4 jobs  Glasgow School of Art (glasgow-school-of-art)
+[jobs.ac.uk]   0 research /   0 jobs  SRUC (Scotland's Rural College) (employer not found)
+[jobs.ac.uk]   0 research /   0 jobs  Trinity Laban Conservatoire of Music and Dance (employer not found)
+[jobs.ac.uk]   0 research /   1 jobs  University College of Estate Management (university-college-of-estate-management)
+[heartbeat] 780s elapsed, memory available 14159 MB
+[heartbeat] 840s elapsed, memory available 13894 MB
+[heartbeat] 900s elapsed, memory available 14352 MB
+[heartbeat] 960s elapsed, memory available 14153 MB
+# Run 2026-10-24
+
+- Universities scanned: 163
+- Pages loaded fine: 149 (71 with research posts, 78 with none listed today)
+- Problems: 14
+- jobs.ac.uk employer pages found: 133 of 163
+- Research postings listed today (both sources, de-duplicated): 591
+- **First run:** 591 open research posts recorded; 89 mention the profile topics and were handed on
