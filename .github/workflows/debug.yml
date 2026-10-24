@@ -6,6 +6,9 @@ on:
       sites:
         description: "'|'-separated university name fragments, or ZERO for all sites with no research posts"
         default: "ZERO"
+      script:
+        description: "debug_dump.py or probe.py"
+        default: "debug_dump.py"
 
 permissions:
   contents: write
@@ -23,7 +26,7 @@ jobs:
       - run: |
           pip install -r requirements.txt
           python -m playwright install --with-deps chromium
-      - run: python debug_dump.py
+      - run: python ${{ inputs.script }}
         env:
           SITES: ${{ inputs.sites }}
       - name: Push dumps to the debug branch
@@ -33,4 +36,4 @@ jobs:
           git checkout -B debug
           git add -f debug
           git commit -m "Debug dumps $(date -u +%FT%H%M)" || true
-          git push -f origin debug
+          git push -f origin HEAD:debug
