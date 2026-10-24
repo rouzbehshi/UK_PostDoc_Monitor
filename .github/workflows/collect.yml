@@ -42,7 +42,7 @@ jobs:
         run: |
           git config user.name "uk-postdoc-monitor-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add -A data reports logs 2>/dev/null || true
+          for d in data reports logs; do [ -e "$d" ] && git add -A "$d"; done
           git commit -m "Daily collection $(date -u +%F)" || echo "Nothing to commit"
           git pull --rebase --autostash
           git push
