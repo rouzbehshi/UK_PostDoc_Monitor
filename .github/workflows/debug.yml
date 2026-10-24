@@ -1,0 +1,36 @@
+name: Debug site dumps
+
+on:
+  workflow_dispatch:
+    inputs:
+      sites:
+        description: "'|'-separated university name fragments, or ZERO for all sites with no research posts"
+        default: "ZERO"
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+      - run: python debug_dump.py
+        env:
+          SITES: ${{ inputs.sites }}
+      - name: Push dumps to the debug branch
+        run: |
+          git config user.name "uk-postdoc-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -B debug
+          git add -f debug
+          git commit -m "Debug dumps $(date -u +%FT%H%M)" || true
+          git push -f origin debug

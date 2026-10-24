@@ -39,6 +39,8 @@ CONCURRENCY = int(os.environ.get("CONCURRENCY", "6"))
 PAGE_TIMEOUT_MS = 45_000
 MAX_PAGES = 8            # pagination / "show more" clicks per site
 MAX_TEXT = 20_000        # characters of advert text kept per posting
+UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+      "(KHTML, like Gecko) Chrome/129.0 Safari/537.36")
 ONLY = os.environ.get("ONLY")  # optional: substring filter on university name, for testing
 
 # Titles we keep. Deliberately broad on topic: the topic is judged later from the full text.
@@ -268,10 +270,7 @@ async def main():
 
     async with async_playwright() as p:
         browser = await p.chromium.launch()
-        ctx = await browser.new_context(
-            user_agent=("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36"),
-            locale="en-GB", viewport={"width": 1366, "height": 900})
+        ctx = await browser.new_context(user_agent=UA, locale="en-GB", viewport={"width": 1366, "height": 900})
         sem = asyncio.Semaphore(CONCURRENCY)
         results = await asyncio.gather(*(scan_university(ctx, u, sem) for u in unis))
 
