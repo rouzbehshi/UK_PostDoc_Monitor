@@ -1,0 +1,44 @@
+name: Collect university research jobs
+
+on:
+  schedule:
+    - cron: "30 4 * * *"   # every day 04:30 UTC (05:30-06:30 in Italy)
+  workflow_dispatch: {}     # "Run workflow" button for manual runs
+  push:
+    paths: ["universities.csv", "collector.py", ".github/workflows/collect.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install --with-deps chromium
+
+      - name: Collect
+        run: python collector.py
+
+      - name: Save results
+        run: |
+          git config user.name "uk-postdoc-monitor-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data reports
+          git commit -m "Daily collection $(date -u +%F)" || echo "Nothing to commit"
+          git pull --rebase --autostash
+          git push
