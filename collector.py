@@ -37,7 +37,9 @@ TODAY = dt.date.today().isoformat()
 
 CONCURRENCY = int(os.environ.get("CONCURRENCY", "6"))
 PAGE_TIMEOUT_MS = 45_000
-MAX_PAGES = 8            # pagination / "show more" clicks per site
+MAX_PAGES = 6            # pagination / "show more" clicks per site
+SITE_TIMEOUT_S = 240     # give up on one site after this long
+BACKLOG_MIN_SCORE = 3    # first run only: minimum topic score for a post to be handed on
 MAX_TEXT = 20_000        # characters of advert text kept per posting
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/129.0 Safari/537.36")
@@ -172,7 +174,7 @@ async def expand_and_collect(page) -> list[dict]:
         before = len(found)
         try:
             await page.locator("[data-ukpm-more]").first.click(timeout=5000)
-            await page.wait_for_load_state("networkidle", timeout=15000)
+            await page.wait_for_load_state("networkidle", timeout=8000)
         except Exception:
             pass
         await page.wait_for_timeout(1500)
@@ -187,10 +189,10 @@ async def open_page(ctx, url):
     page = await ctx.new_page()
     await page.goto(url, timeout=PAGE_TIMEOUT_MS, wait_until="domcontentloaded")
     try:
-        await page.wait_for_load_state("networkidle", timeout=15000)
+        await page.wait_for_load_state("networkidle", timeout=10000)
     except PWTimeout:
         pass
-    await page.wait_for_timeout(2000)
+    await page.wait_for_timeout(1200)
     # accept-only-necessary cookie banners if they block the page (best effort)
     for txt in ["Reject all", "Reject All", "Only necessary", "Necessary only", "Accept necessary", "Decline"]:
         try:
@@ -326,7 +328,7 @@ async def scan_page_tree(ctx, start_url, uni_urls, res):
         if jobs:
             return jobs
         visited = []
-        for nxt in follow_candidates(anchors, page.url, uni_urls)[:4]:
+        for nxt in follow_candidates(anchors, page.url, uni_urls)[:3]:
             p2 = await open_page(ctx, nxt)
             try:
                 if "/hcmUI/CandidateExperience/" in p2.url:
@@ -364,7 +366,7 @@ async def scan_university(ctx, uni: dict, sem) -> dict:
         for i, url in enumerate(urls):
             res.update(status="ok", error="", url=url)
             try:
-                jobs = await scan_page_tree(ctx, url, urls, res)
+                jobs = await asyncio.wait_for(scan_page_tree(ctx, url, urls, res), timeout=SITE_TIMEOUT_S)
                 uniq = {}
                 for j in jobs:
                     uniq.setdefault(norm_url(j["href"]), j)
@@ -408,43 +410,69 @@ def slugify(name):
     return re.sub(r"[^a-z0-9]+", "-", s).strip("-")
 
 
+def html_to_text(html: str) -> str:
+    html = re.sub(r"(?is)<(script|style|noscript|svg|nav|footer|header)[^>]*>.*?</\1>", " ", html)
+    html = re.sub(r"(?i)<br\s*/?>|</p>|</li>|</h\d>|</div>|</tr>", "\n", html)
+    txt = re.sub(r"<[^>]+>", " ", html)
+    txt = (txt.replace("&amp;", "&").replace("&nbsp;", " ").replace("&#39;", "'").replace("&quot;", '"')
+              .replace("&lt;", "<").replace("&gt;", ">").replace("&pound;", "£"))
+    txt = re.sub(r"[ \t]+", " ", txt)
+    return re.sub(r"\n\s*\n+", "\n\n", txt).strip()
+
+
+JOBSAC_A = re.compile(r'<a[^>]+href="((?:https://www\.jobs\.ac\.uk)?/job/[A-Z0-9]{5,8}[^"]*)"[^>]*>(.*?)</a>', re.S | re.I)
+
+
 async def jobsac_scan(ctx, uni, sem, slug_cache):
+    """Read the institution's jobs.ac.uk employer page(s) with plain HTTP (no browser)."""
     name = uni["name"]
     res = {"name": name, "slug": "", "status": "ok", "jobs": [], "pages": 0}
     cands = [slug_cache[name]] if slug_cache.get(name) else (
         JOBSAC_OVERRIDES.get(name, []) + [slugify(name), "the-" + slugify(name)])
     async with sem:
         for slug in dict.fromkeys(cands):
-            found, page = {}, None
+            found, use_browser = {}, False
             try:
-                for k in range(12):
+                for k in range(15):
                     url = f"https://www.jobs.ac.uk/search/employer/{slug}?sortOrder=1&pageSize=25&startIndex={1 + 25 * k}"
-                    page = await open_page(ctx, url)
-                    title = await page.title()
-                    if k == 0 and ("Apply Online at jobs.ac.uk" not in title or title.startswith("jobs.ac.uk")):
+                    r = await ctx.request.get(url, timeout=30000)
+                    html = await r.text()
+                    if use_browser or (r.status == 200 and not JOBSAC_A.search(html)):
+                        use_browser = True  # results rendered by script: fall back to the browser
+                        pg = await open_page(ctx, url)
+                        try:
+                            html = await pg.content()
+                        finally:
+                            await pg.close()
+                    m = re.search(r"<title>\s*(.*?)\s*</title>", html, re.S)
+                    title = m.group(1) if m else ""
+                    if k == 0 and (r.status != 200 or " Jobs - Apply Online at jobs.ac.uk" not in title):
                         break
-                    anchors = await page.evaluate(EXTRACT_JS)
-                    await page.close(); page = None
+                    employer = title.split(" Jobs - Apply Online")[0].strip()
                     new = 0
-                    for a in anchors:
-                        if re.search(r"jobs\.ac\.uk/job/[A-Z0-9]+", a["href"]) and norm_url(a["href"]) not in found:
-                            found[norm_url(a["href"])] = a; new += 1
+                    for mm in JOBSAC_A.finditer(html):
+                        href = urljoin("https://www.jobs.ac.uk", mm.group(1))
+                        t = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", mm.group(2))).strip()
+                        after = html[mm.end(): mm.end() + 1500]
+                        if employer and employer.lower() not in html_to_text(after).lower():
+                            continue  # featured job from another employer
+                        if norm_url(href) not in found and t:
+                            found[norm_url(href)] = {"href": href, "title": t[:250], "ctx": html_to_text(after)[:300]}
+                            new += 1
                     res["pages"] = k + 1
                     if new < 20:
                         break
             except Exception as e:
                 res["status"] = f"error: {type(e).__name__}"
-            finally:
-                if page:
-                    await page.close()
             if found:
                 res["slug"] = slug
                 slug_cache[name] = slug
                 res["jobs"] = [a for a in found.values() if is_research(a["title"], a["ctx"])]
+                res["all"] = len(found)
                 break
         if not res["slug"] and res["status"] == "ok":
             res["status"] = "employer not found"
-    print(f"[jobs.ac.uk] {len(res['jobs']):3} research  {name} ({res['slug'] or res['status']})", flush=True)
+    print(f"[jobs.ac.uk] {len(res['jobs']):3} research / {res.get('all', 0):3} jobs  {name} ({res['slug'] or res['status']})", flush=True)
     return res
 
 
@@ -452,6 +480,11 @@ async def fetch_text(ctx, url, sem, oracle=None) -> str:
     async with sem:
         page = None
         try:
+            if "jobs.ac.uk/job/" in url:
+                r = await ctx.request.get(url, timeout=30000)
+                t = html_to_text(await r.text())
+                i = t.find("Back to search results")
+                return (t[i + 22:] if 0 <= i < 3000 else t)[:MAX_TEXT]
             if oracle:
                 try:
                     t = await oracle_text(ctx, oracle)
@@ -522,14 +555,21 @@ async def main():
                 v["missing_days"] = v.get("missing_days", 0) + 1
 
         # full advert text for each new posting
-        texts = await asyncio.gather(*(fetch_text(ctx, it["url"], sem, it.pop("_oracle")) for it in new_items))
+        tsem = asyncio.Semaphore(8)
+        texts = await asyncio.gather(*(fetch_text(ctx, it["url"], tsem, it.pop("_oracle")) for it in new_items))
         for it, t in zip(new_items, texts):
             it["advert_text"] = t
             it["profile_score"] = score(it["title"] + " " + t)
         await browser.close()
 
     new_items.sort(key=lambda x: -x["profile_score"])
-    payload = {"date": TODAY, "baseline_run": first_run, "count": len(new_items), "postings": new_items}
+    backlog_total = len(new_items)
+    if first_run:
+        # First run = every currently open post. Hand on only those whose advert mentions the
+        # profile topics at least a few times; from tomorrow every new post is handed on in full.
+        new_items = [it for it in new_items if it["profile_score"] >= BACKLOG_MIN_SCORE]
+    payload = {"date": TODAY, "baseline_run": first_run, "count": len(new_items),
+               "backlog_total": backlog_total if first_run else None, "postings": new_items}
     (DATA / "new" / f"{TODAY}.json").write_text(json.dumps(payload, indent=1, ensure_ascii=False))
     (DATA / "latest_new.json").write_text(json.dumps(payload, indent=1, ensure_ascii=False))
     # forget postings that disappeared from the sites more than 60 days ago
@@ -560,7 +600,8 @@ async def main():
              f"- Problems: {len(bad)}",
              f"- jobs.ac.uk employer pages found: {sum(1 for v in jac.values() if v.get('slug'))} of {len(jac)}",
              f"- Research postings listed today (both sources, de-duplicated): {len(today_keys)}",
-             f"- **New since last run: {len(new_items)}**" + (" (first run: everything counts as new)" if first_run else ""),
+             (f"- **First run:** {backlog_total} open research posts recorded; {len(new_items)} mention the profile topics and were handed on"
+              if first_run else f"- **New since last run: {len(new_items)}**"),
              "", "## New postings", ""]
     for it in new_items:
         lines.append(f"- [{it['title']}]({it['url']}) — {it['university']} via {it['source']} (score {it['profile_score']})")
