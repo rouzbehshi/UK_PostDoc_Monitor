@@ -471,7 +471,7 @@ async def jobsac_scan(ctx, uni, sem, slug_cache):
                             found[norm_url(href)] = {"href": href, "title": t[:250], "ctx": html_to_text(after)[:300]}
                             new += 1
                     res["pages"] = k + 1
-                    if new < 20:
+                    if new == 0:
                         break
             except Exception as e:
                 res["status"] = f"error: {type(e).__name__}"
