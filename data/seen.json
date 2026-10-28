@@ -57,7 +57,7 @@
   "tkey": "Aston University|1645 26 research associate in mathematics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "55e92f82a6b5923b": {
   "university": "Aston University",
@@ -157,7 +157,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "8b32ff54474c0b0a": {
   "university": "University of Bath",
@@ -207,7 +207,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "1f8e9179cfde5844": {
   "university": "University of Bedfordshire",
@@ -317,7 +317,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "a8de0818b1dc989e": {
   "university": "University of Birmingham",
@@ -347,7 +347,7 @@
   "tkey": "University of Birmingham|research fellow battery materials recycling",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "229732a9b31fd04a": {
   "university": "University of Birmingham",
@@ -357,7 +357,7 @@
   "tkey": "University of Birmingham|research fellow life cycle assessment of manufacture and recycling of new energy devices",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "cc030704bac57b8c": {
   "university": "Birmingham City University",
@@ -377,7 +377,7 @@
   "tkey": "Bournemouth University|post doctoral researcher part time fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "86d602880f83b76b": {
   "university": "University of Brighton",
@@ -557,7 +557,7 @@
   "tkey": "University of Bristol|senior research associate in protein engineering",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "4b20fc5d0318cca3": {
   "university": "University of Bristol",
@@ -777,7 +777,7 @@
   "tkey": "University of Cambridge|research assistant part time fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "8b0655019d13e3dc": {
   "university": "University of Cambridge",
@@ -847,7 +847,7 @@
   "tkey": "University of Cambridge|research assistant associate in climate compatible growth x 2 fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 4
+  "missing_days": 5
  },
  "d1e4c42bcf9435bf": {
   "university": "University of Cambridge",
@@ -1007,7 +1007,7 @@
   "tkey": "University of Cambridge|research associate in the photophysics of battery materials amp molecular systems fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "d0618552883e7985": {
   "university": "Cardiff Metropolitan University",
@@ -1017,7 +1017,7 @@
   "tkey": "Cardiff Metropolitan University|research associate impact",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "3741eeefe2114221": {
   "university": "Cardiff University",
@@ -1097,7 +1097,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "12731c04afee02f3": {
   "university": "Cardiff University",
@@ -1107,7 +1107,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "d774090cec03e95a": {
   "university": "Cardiff University",
@@ -1117,7 +1117,7 @@
   "tkey": "Cardiff University|research associate qualitative 3 posts",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "b14f83cfa8a10ac4": {
   "university": "Cardiff University",
@@ -1157,7 +1157,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "cdfedc1948ab0e79": {
   "university": "Cardiff University",
@@ -1167,7 +1167,7 @@
   "tkey": "Cardiff University|research associate qualitative 2 posts",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "9ac7c14b9dd150cb": {
   "university": "City St George's, University of London",
@@ -1207,7 +1207,7 @@
   "tkey": "Cranfield University|research fellow in automotive multistatic radars",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "9ca644f85ea6bb6b": {
   "university": "Cranfield University",
@@ -1327,7 +1327,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "4cb9c6446eb338e1": {
   "university": "Edge Hill University",
@@ -1337,7 +1337,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "ef452418bfea1e7e": {
   "university": "University of Edinburgh",
@@ -1647,7 +1647,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "56bdcc7c1491a295": {
   "university": "University of Glasgow",
@@ -1727,7 +1727,7 @@
   "tkey": "University of Glasgow|research assistant associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "c60bbc06002bb475": {
   "university": "University of Gloucestershire",
@@ -1797,7 +1797,7 @@
   "tkey": "Heriot-Watt University|postdoctoral research associate in ultrafast quantum enabled immune screening",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "1cc6cda53f38a1f4": {
   "university": "Heriot-Watt University",
@@ -1847,7 +1847,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "d3f70e11e8928505": {
   "university": "University of Hull",
@@ -1857,7 +1857,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "30945f5936c5fc6b": {
   "university": "Imperial College London",
@@ -2047,7 +2047,7 @@
   "tkey": "Imperial College London|research associate in molecular bacteriology",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "180cb56b8096f644": {
   "university": "Imperial College London",
@@ -2057,7 +2057,7 @@
   "tkey": "Imperial College London|research associate in high altitude platforms systems",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "8f9fde593a3a4e6f": {
   "university": "Imperial College London",
@@ -2147,7 +2147,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "71a62b2c9ee7d851": {
   "university": "Imperial College London",
@@ -2157,7 +2157,7 @@
   "tkey": "Imperial College London|research associate in long wavelength oxygenic photosynthesis",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "68c1111b06390164": {
   "university": "Imperial College London",
@@ -2167,7 +2167,7 @@
   "tkey": "Imperial College London|research assistant or associate in data driven modelling of fuel cell dynamics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "b87c6ca08f492b88": {
   "university": "Imperial College London",
@@ -2177,7 +2177,7 @@
   "tkey": "Imperial College London|research associate in space planetary physics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "559d15e0764bad2d": {
   "university": "Imperial College London",
@@ -2187,7 +2187,7 @@
   "tkey": "Imperial College London|research associate in computational biomolecular physics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "eafe45a9438f55c2": {
   "university": "Imperial College London",
@@ -2217,7 +2217,7 @@
   "tkey": "Imperial College London|research associate in vector control strategies",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "42f965ce56d673ac": {
   "university": "King's College London",
@@ -2247,7 +2247,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "a0b447d419b47028": {
   "university": "King's College London",
@@ -2267,7 +2267,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "f4801ffa21060e68": {
   "university": "King's College London",
@@ -2277,7 +2277,7 @@
   "tkey": "King's College London|research assistant associate in operations research",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "d868fba6def81bf0": {
   "university": "King's College London",
@@ -2347,7 +2347,7 @@
   "tkey": "King's College London|research associate in contrast enhanced ultrasound imaging",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "43959ea829347197": {
   "university": "King's College London",
@@ -2497,7 +2497,7 @@
   "tkey": "Lancaster University|senior research associate in life cycle assessment 1090 26",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "2578b3b9c440bd1f": {
   "university": "Lancaster University",
@@ -2727,7 +2727,7 @@
   "tkey": "University of Leeds|temperate rainforest restoration research assistant",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "fe3fd90aec3121ab": {
   "university": "University of Leeds",
@@ -2847,7 +2847,7 @@
   "tkey": "University of Leicester|research associate only the scatters remain leverhulme project",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "363193f2b7ea03a8": {
   "university": "University of Leicester",
@@ -2857,7 +2857,7 @@
   "tkey": "University of Leicester|stakeholder engagement specialist circarb research assistant",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "b2912fead5d225e6": {
   "university": "University of Leicester",
@@ -2877,7 +2877,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "dd918ddd426f09c2": {
   "university": "University of Leicester",
@@ -2987,7 +2987,7 @@
   "tkey": "Liverpool John Moores University|research fellow fixed term for 24 months",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-24",
-  "missing_days": 4
+  "missing_days": 5
  },
  "539c071a6c16ee48": {
   "university": "Liverpool John Moores University",
@@ -3007,7 +3007,7 @@
   "tkey": "Liverpool John Moores University|research fellow lbs impact 0 4fte fixed term until 31st july 2027",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "574100b024c4271f": {
   "university": "University of Liverpool",
@@ -3057,7 +3057,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "0593d2e1d370ab2d": {
   "university": "University of Liverpool",
@@ -3067,7 +3067,7 @@
   "tkey": "University of Liverpool|postdoctoral fellows in statistical ocean acoustics 2 posts grade 7",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "2bb2cd43be1f20df": {
   "university": "London School of Economics and Political Science",
@@ -3367,7 +3367,7 @@
   "tkey": "Loughborough University|research associate in human physiology immunology and long covid",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "32ab67ade32aa620": {
   "university": "Loughborough University",
@@ -3377,7 +3377,7 @@
   "tkey": "Loughborough University|research associate in human physiology immunology and long covid req260740",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "dea553fc9b252c27": {
   "university": "Loughborough University",
@@ -3387,7 +3387,7 @@
   "tkey": "Loughborough University|research associate in human physiology immunology and long covid req260740 send to a friend",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "8659b6841328f5fe": {
   "university": "Loughborough University",
@@ -3397,7 +3397,7 @@
   "tkey": "Loughborough University|research associate in human physiology immunology and long covid req260740 apply online",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "95d3d529bd0a4de3": {
   "university": "Loughborough University",
@@ -3447,7 +3447,7 @@
   "tkey": "Manchester Metropolitan University|research associate impact",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "7836caf366881289": {
   "university": "Manchester Metropolitan University",
@@ -3517,7 +3517,7 @@
   "tkey": "University of Manchester|research associate in particle physics on atlas",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "cb03d9f16ba05182": {
   "university": "University of Manchester",
@@ -3527,7 +3527,7 @@
   "tkey": "University of Manchester|research assistant protein synthesis and cancer",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "aee540bb069b4328": {
   "university": "University of Manchester",
@@ -3537,7 +3537,7 @@
   "tkey": "University of Manchester|research associate in computational fluid mechanics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "29af57fdb03bf781": {
   "university": "University of Manchester",
@@ -3547,7 +3547,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "29b71d39bd718509": {
   "university": "University of Manchester",
@@ -3557,7 +3557,7 @@
   "tkey": "University of Manchester|post doctoral research associate in maternal cardiovascular health",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "30ae8a57df405b66": {
   "university": "University of Manchester",
@@ -3567,7 +3567,7 @@
   "tkey": "University of Manchester|esrc iaa research associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "862313f810b8ac19": {
   "university": "University of Manchester",
@@ -3607,7 +3607,7 @@
   "tkey": "University of Manchester|research associate in proton therapy detector development",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "9ffecb5ac43a2f07": {
   "university": "University of Manchester",
@@ -3617,7 +3617,7 @@
   "tkey": "University of Manchester|clinical research associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "f1fd3b130de8d508": {
   "university": "University of Manchester",
@@ -3627,7 +3627,7 @@
   "tkey": "University of Manchester|research associate in solid state nmr spectroscopy",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-28",
-  "missing_days": 0
+  "missing_days": 1
  },
  "2bf851e3a3923ba5": {
   "university": "University of Manchester",
@@ -3637,7 +3637,7 @@
   "tkey": "University of Manchester|postdoctoral research associate neuroscience",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "2af8b439ce9d63e6": {
   "university": "Newcastle University",
@@ -3677,7 +3677,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "9cb33ad2f77aedf4": {
   "university": "Newcastle University",
@@ -3687,7 +3687,7 @@
   "tkey": "Newcastle University|senior research associate in hydroclimatic extremes and causal pathways",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "0509ae55c6f209b5": {
   "university": "Newcastle University",
@@ -3727,7 +3727,7 @@
   "tkey": "Newcastle University|research assistant associate modern british history",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-28",
-  "missing_days": 0
+  "missing_days": 1
  },
  "f490bae795e8f408": {
   "university": "Newcastle University",
@@ -3737,7 +3737,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "8e0d87f4837384d7": {
   "university": "Newcastle University",
@@ -3757,7 +3757,7 @@
   "tkey": "Northeastern University London|postdoctoral research associate position in neuromorphic accelerators",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "a0608763cc2a96df": {
   "university": "Northumbria University",
@@ -3827,7 +3827,7 @@
   "tkey": "Nottingham Trent University|research fellow agri tech development",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "858456cc8a0dab16": {
   "university": "Nottingham Trent University",
@@ -3857,7 +3857,7 @@
   "tkey": "University of Nottingham|research associate fellow internal only fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "d0c0a2dc584aa44b": {
   "university": "University of Nottingham",
@@ -3887,7 +3887,7 @@
   "tkey": "University of Nottingham|teaching associate and researcher in inorganic and physical chemistry fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "c7464b09d904c250": {
   "university": "University of Nottingham",
@@ -3987,7 +3987,7 @@
   "tkey": "Open University|postdoctoral research associate oncolytic clostridia as prostate cancer therapeutics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "e8bbbf27c0f5ee88": {
   "university": "Open University",
@@ -4037,7 +4037,7 @@
   "tkey": "University of Oxford|postdoctoral research assistant in biotechnology",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "4b26edc766cd7d88": {
   "university": "University of Oxford",
@@ -4047,7 +4047,7 @@
   "tkey": "University of Oxford|postdoctoral research assistant in machine learning",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "cd27b0bac314909b": {
   "university": "University of Oxford",
@@ -4057,7 +4057,7 @@
   "tkey": "University of Oxford|postdoctoral researcher in immune metabolism and multi omics of symptom dimensions",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "450127d8f392635a": {
   "university": "University of Oxford",
@@ -4067,7 +4067,7 @@
   "tkey": "University of Oxford|postdoctoral research assistant in multimodal analysis to understand medical procedures",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "1537bd6cf8fe7c94": {
   "university": "University of Oxford",
@@ -4077,7 +4077,7 @@
   "tkey": "University of Oxford|research associate in multi view 3d ultrasound reconstruction",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "0b0ee06cd892b0fa": {
   "university": "University of Plymouth",
@@ -4097,7 +4097,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "3e6769f0432f4ecd": {
   "university": "University of Portsmouth",
@@ -4227,7 +4227,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "c0786aa1d99d677f": {
   "university": "Queen's University Belfast",
@@ -4547,7 +4547,7 @@
   "tkey": "University of Sheffield|clinical research fellow in experimental medicine",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "0d8ebc0347c2a16e": {
   "university": "SOAS University of London",
@@ -4687,7 +4687,7 @@
   "tkey": "University of Southampton|research fellow in iii v epitaxy for optoelectronics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-28",
-  "missing_days": 0
+  "missing_days": 1
  },
  "8fb34b8d87aec93e": {
   "university": "University of Southampton",
@@ -4697,7 +4697,7 @@
   "tkey": "University of Southampton|research fellow in experimental fluid mechanics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "26098bee0511c207": {
   "university": "University of Southampton",
@@ -4707,7 +4707,7 @@
   "tkey": "University of Southampton|research fellow in computational chemistry",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "bad6a8dd443edd19": {
   "university": "University of Southampton",
@@ -4717,7 +4717,7 @@
   "tkey": "University of Southampton|research fellow esrc project accent bias and domestic abuse victimisation abdavic",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "a9ebf30c4c1ac273": {
   "university": "University of Southampton",
@@ -4727,7 +4727,7 @@
   "tkey": "University of Southampton|research fellow in topological photonics",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "ae849c75c72cca73": {
   "university": "University of St Andrews",
@@ -4817,7 +4817,7 @@
   "tkey": "University of Strathclyde|research associate in co mineralisation and process scale up ureaka 854608",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "bf972062f2b6be8d": {
   "university": "University of Surrey",
@@ -4877,7 +4877,7 @@
   "tkey": "University of Surrey|gcare research fellow in air pollution modelling monitoring",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "765829994382cbcc": {
   "university": "University of Surrey",
@@ -4887,7 +4887,7 @@
   "tkey": "University of Surrey|research assistant for lunar in situ resource propellant extraction",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "9ab5d0879dff217c": {
   "university": "University of Surrey",
@@ -4907,7 +4907,7 @@
   "tkey": "University of Surrey|gcare research fellow in air pollution modelling amp monitoring",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "4b55a8dbbd1c824c": {
   "university": "University of Sussex",
@@ -4947,7 +4947,7 @@
   "tkey": "University of Sussex|research fellow in quantum technology ref 44292 fixed term",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "b9e1ce1f137a5c07": {
   "university": "University of Sussex",
@@ -5047,7 +5047,7 @@
   "tkey": "University of Sussex|research fellow in quantum technology",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "a3c59927ceafd02a": {
   "university": "University of Sussex",
@@ -5087,7 +5087,7 @@
   "tkey": "Swansea University|post doctoral research associate",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "7add577b7d35f49a": {
   "university": "Swansea University",
@@ -5097,7 +5097,7 @@
   "tkey": "Swansea University|swansea university is seeking to appoint a postdoctoral research associate pdra in semiconductor physics and terahertz science and technology",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "49e16c4b1e25ed64": {
   "university": "Swansea University",
@@ -5157,7 +5157,7 @@
   "tkey": "Teesside University|ktp associate ai enabled business intelligence and automation engineer",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "a2d33174de3c20f6": {
   "university": "Ulster University",
@@ -5227,7 +5227,7 @@
   "tkey": "Ulster University|research associate in nutrition school of biomedical sciences",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "af2784a4d1a9b9a0": {
   "university": "Ulster University",
@@ -5297,7 +5297,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "9e727e4116cd7ae6": {
   "university": "University College London",
@@ -5307,7 +5307,7 @@
   "tkey": null,
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "939a165f2e13fd84": {
   "university": "University College London",
@@ -5317,7 +5317,7 @@
   "tkey": "University College London|research fellow in 6g wireless communications",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "c73b1556a8ca5755": {
   "university": "University College London",
@@ -5327,7 +5327,7 @@
   "tkey": "University College London|research fellow biopharma economics amp sustainability modelling",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "f5489d43935babcc": {
   "university": "University College London",
@@ -5337,7 +5337,7 @@
   "tkey": "University College London|research fellow in medical image analysis amp machine learning",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "0620b933896d717f": {
   "university": "University of Warwick",
@@ -5377,7 +5377,7 @@
   "tkey": "University of Warwick|senior research technician 112163",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "b298958c78e9d49f": {
   "university": "University of Warwick",
@@ -5436,8 +5436,8 @@
   "source": "university site",
   "tkey": null,
   "first_seen": "2026-10-24",
-  "last_seen": "2026-10-27",
-  "missing_days": 1
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "ca6cd3a806ef8158": {
   "university": "University of Warwick",
@@ -5447,7 +5447,7 @@
   "tkey": "University of Warwick|senior research technician",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-27",
-  "missing_days": 1
+  "missing_days": 2
  },
  "f6898c52e8a724ad": {
   "university": "University of Warwick",
@@ -5657,7 +5657,7 @@
   "tkey": "University of Westminster|research associate 50072510",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "fadee18be57169ec": {
   "university": "University of Worcester",
@@ -5817,7 +5817,7 @@
   "tkey": "Royal College of Art|senior postdoctoral researcher 1fte ftc riyadh university of arts partnership",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "cf0c9f5b491568c0": {
   "university": "Royal College of Art",
@@ -5827,7 +5827,7 @@
   "tkey": "Royal College of Art|senior research fellow ma architecture riyadh university of arts partnership",
   "first_seen": "2026-10-24",
   "last_seen": "2026-10-25",
-  "missing_days": 3
+  "missing_days": 4
  },
  "cbe1ea68b208e104": {
   "university": "Royal College of Art",
@@ -5896,8 +5896,8 @@
   "source": "university site",
   "tkey": "University of East Anglia|research fellow icb liaison officer ra2419",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "4e6f8ae5c08397dd": {
   "university": "University of East Anglia",
@@ -5906,8 +5906,8 @@
   "source": "university site",
   "tkey": "University of East Anglia|senior research associate ra2420",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "8526eddb519221cf": {
   "university": "University of East Anglia",
@@ -5916,8 +5916,8 @@
   "source": "university site",
   "tkey": "University of East Anglia|senior research associate ra2418",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "1410fef707e7aed7": {
   "university": "University of East Anglia",
@@ -5926,8 +5926,8 @@
   "source": "university site",
   "tkey": "University of East Anglia|research fellow in applied health research ra2414",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "fa19a1c27c0c8202": {
   "university": "University of East Anglia",
@@ -5936,8 +5936,8 @@
   "source": "university site",
   "tkey": "University of East Anglia|senior laboratory research technician tc953",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "722fee14061046e9": {
   "university": "University of East Anglia",
@@ -5947,7 +5947,7 @@
   "tkey": "University of East Anglia|senior research associate in climate change policy people and action ra2413",
   "first_seen": "2026-10-25",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "339b7184a8279303": {
   "university": "University of Sheffield",
@@ -5966,8 +5966,8 @@
   "source": "university site",
   "tkey": "University of Sheffield|research associate heterogeneous integration systems architecture and design",
   "first_seen": "2026-10-25",
-  "last_seen": "2026-10-26",
-  "missing_days": 2
+  "last_seen": "2026-10-28",
+  "missing_days": 0
  },
  "ece660a146c2d548": {
   "university": "University of Birmingham",
@@ -6017,7 +6017,7 @@
   "tkey": "Imperial College London|chapman fellow in mathematics applied mathematics section",
   "first_seen": "2026-10-26",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "6c94db37baa047c7": {
   "university": "Imperial College London",
@@ -6027,7 +6027,7 @@
   "tkey": "Imperial College London|chapman fellow in mathematics mathematical finance section",
   "first_seen": "2026-10-26",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "dcfe9e53de3907a5": {
   "university": "Imperial College London",
@@ -6037,7 +6037,7 @@
   "tkey": "Imperial College London|chapman fellow in mathematics pure mathematics section",
   "first_seen": "2026-10-26",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "53cf5fbd9e1f4ce9": {
   "university": "Imperial College London",
@@ -6047,7 +6047,7 @@
   "tkey": "Imperial College London|chapman fellow in mathematics statistics section",
   "first_seen": "2026-10-26",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "5ed5956db49d1000": {
   "university": "King's College London",
@@ -6117,7 +6117,7 @@
   "tkey": null,
   "first_seen": "2026-10-26",
   "last_seen": "2026-10-26",
-  "missing_days": 2
+  "missing_days": 3
  },
  "2d80441194228f46": {
   "university": "University of Warwick",
@@ -7005,6 +7005,46 @@
   "url": "https://www.jobs.ac.uk/job/DTK694/researcher-and-corporate-development-manager",
   "source": "jobs.ac.uk",
   "tkey": "Trinity Laban Conservatoire of Music and Dance|researcher and corporate development manager",
+  "first_seen": "2026-10-28",
+  "last_seen": "2026-10-28",
+  "missing_days": 0
+ },
+ "0b09c5ef00967d92": {
+  "university": "University of East Anglia",
+  "title": "Senior Research Associate (RA2423)",
+  "url": "https://vacancies.uea.ac.uk/vacancies/2565/senior-research-associate-ra2423.html",
+  "source": "university site",
+  "tkey": "University of East Anglia|senior research associate ra2423",
+  "first_seen": "2026-10-28",
+  "last_seen": "2026-10-28",
+  "missing_days": 0
+ },
+ "f452659b075a5e4b": {
+  "university": "University of East Anglia",
+  "title": "Senior Research Associate (RA2422)",
+  "url": "https://vacancies.uea.ac.uk/vacancies/2575/senior-research-associate-ra2422.html",
+  "source": "university site",
+  "tkey": "University of East Anglia|senior research associate ra2422",
+  "first_seen": "2026-10-28",
+  "last_seen": "2026-10-28",
+  "missing_days": 0
+ },
+ "6d9da8912863ce30": {
+  "university": "University of Manchester",
+  "title": "Research Assistant",
+  "url": "https://www.jobs.manchester.ac.uk/Job/JobDetail?JobId=46230",
+  "source": "university site",
+  "tkey": null,
+  "first_seen": "2026-10-28",
+  "last_seen": "2026-10-28",
+  "missing_days": 0
+ },
+ "598ca00b69f7cda3": {
+  "university": "Queen Mary University of London",
+  "title": "Clinical Teaching Fellow in Restorative Dentistry",
+  "url": "https://www.jobs.ac.uk/job/DTL110/clinical-teaching-fellow-in-restorative-dentistry",
+  "source": "jobs.ac.uk",
+  "tkey": "Queen Mary University of London|clinical teaching fellow in restorative dentistry",
   "first_seen": "2026-10-28",
   "last_seen": "2026-10-28",
   "missing_days": 0
