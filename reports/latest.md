@@ -1,51 +1,21 @@
-# Run 2026-11-07
+# Run 2026-11-08
 
 - Universities scanned: 163
 - Pages loaded fine: 151 (67 with research posts, 84 with none listed today)
 - Problems: 12
 - jobs.ac.uk employer pages found: 129 of 163
-- Research postings listed today (both sources, de-duplicated): 593
-- **New since last run: 30**
+- Research postings listed today (both sources, de-duplicated): 594
+- **New since last run: 0**
 
 ## New postings
 
-- [Research Associate in AI for Environmental Forecasting (SENTINEL project)](https://jobs.le.ac.uk/vacancies/14072/research-associate-in-ai-for-environmental-forecasting-sentinel-project.html) — University of Leicester via university site (score 13)
-- [Process Development Engineer – Lithium Ion Battery Recycling (Research Associate)](https://jobs.le.ac.uk/vacancies/13902/process-development-engineer--lithium-ion-battery-recycling-research-associate.html) — University of Leicester via university site (score 10)
-- [Postdoctoral Research Fellow in Economics](https://www.jobs.ac.uk/job/DTO352/postdoctoral-research-fellow-in-economics) — University of Oxford via jobs.ac.uk (score 7)
-- [Research Fellow in Genetic Epidemiology](https://www.jobs.ac.uk/job/DTO521/research-fellow-in-genetic-epidemiology) — University of Southampton via jobs.ac.uk (score 4)
-- [Research Associate](https://www.jobs.ac.uk/job/DTO556/research-associate) — University of Leicester via jobs.ac.uk (score 2)
-- [Embedded Systems and Instrumentation (KTP Associate)](https://manmetjobs.mmu.ac.uk/jobs/vacancy/embedded-systems-and-instrumentation-ktp-associate-9542-other/9438/description/) — Manchester Metropolitan University via university site (score 2)
-- [Research Fellow](https://www.jobs.ac.uk/job/DTO561/research-fellow) — Queen's University Belfast via jobs.ac.uk (score 2)
-- [Research Associate](https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=ED14065) — University of Bath via university site (score 1)
-- [Research Associate in Modelling and Robotics](https://www.bath.ac.uk/jobs/Vacancy.aspx?ref=SB14077) — University of Bath via university site (score 1)
-- [Teaching Fellow in Creative Industries](https://www.jobs.ac.uk/job/DTO391/teaching-fellow-in-creative-industries) — University of Birmingham via jobs.ac.uk (score 1)
-- [Postdoctoral Research Associate in Molecular Biosciences](https://durham.taleo.net/careersection/du_ext/jobdetail.ftl?job=26001374&tz=GMT%2B00%3A00&tzname=UTC) — Durham University via university site (score 1)
-- [Research Associate](https://jobs.le.ac.uk/vacancies/13967/research-associate.html) — University of Leicester via university site (score 1)
-- [Senior Research Technician - Rice Research (Fixed-term)](https://jobs.nottingham.ac.uk/vacancy.aspx?ref=SCI807226) — University of Nottingham via university site (score 1)
-- [Postdoctoral Research Assistant in Artificial Intelligence X-ray imaging for sustainable metal manufacturing](https://www.jobs.ac.uk/job/DTO408/postdoctoral-research-assistant-in-artificial-intelligence-x-ray-imaging-for-sustainable-metal-manufacturing) — University of Oxford via jobs.ac.uk (score 1)
-- [Manufacturing Operations &amp; Digital Transformation Lead (KTP Associate)](https://www.jobs.ac.uk/job/DTO478/manufacturing-operations-and-digital-transformation-lead-ktp-associate) — University of Sheffield via jobs.ac.uk (score 1)
-- [PRIME Research Assistant](https://www.jobs.ac.uk/job/DTO468/prime-research-assistant) — Swansea University via jobs.ac.uk (score 1)
-- [Research Associate](https://www.jobs.ac.uk/job/DTO537/research-associate) — University of Bath via jobs.ac.uk (score 0)
-- [Senior Research Associate in Molecular Simulations of the Human Skin Barrier](https://www.bristol.ac.uk/jobs/find/details?jobId=392199&jobTitle=Senior%20Research%20Associate%20in%20Molecular%20Simulations%20of%20the%20Human%20Skin%20Barrier) — University of Bristol via university site (score 0)
-- [Research Associate](https://www.jobs.ac.uk/job/DTO582/research-associate) — University of Glasgow via jobs.ac.uk (score 0)
-- [Research Fellow in Host Pathogen Interactions](https://jobs.leeds.ac.uk/vacancy.aspx?ref=FBSMB1324) — University of Leeds via university site (score 0)
-- [Implementation and Community Research Officer (0.5 FTE) - Fixed Term](https://www.hope.ac.uk/aboutus/jobopportunities/currentvacancies/implementationandcommunityresearchofficer05fte/) — Liverpool Hope University via university site (score 0)
-- [Dalton Research Fellow](https://www.jobs.ac.uk/job/DTO354/dalton-research-fellow) — University of Manchester via jobs.ac.uk (score 0)
-- [Qualitative Research Assistant](https://www.jobs.ac.uk/job/DTO513/qualitative-research-assistant) — University of Oxford via jobs.ac.uk (score 0)
-- [Post-Doctoral Researcher for Brain Analytics and Computing](https://www.jobs.ac.uk/job/DTO422/post-doctoral-researcher-for-brain-analytics-and-computing) — University of Oxford via jobs.ac.uk (score 0)
-- [Research Assistant in Medical Statistics/Research Associate in Medical Statistics](https://jobsite.sheffield.ac.uk/job/Research-Assistant-in-Medical-StatisticsResearch-Associate-in-Medical-Statistics/3392-en_GB) — University of Sheffield via university site (score 0)
-- [Research Fellow](https://www.jobs.ac.uk/job/DTO564/research-fellow) — University College London via jobs.ac.uk (score 0)
-- [Research Fellow](https://www.jobs.ac.uk/job/DTO439/research-fellow) — University College London via jobs.ac.uk (score 0)
-- [Research Assistant](https://workwithus.warwick.ac.uk/job/COVENTRY-Research-Assistant-CV4-7AL/1443706033/) — University of Warwick via university site (score 0)
-- [Senior Research Technician (112556)](https://workwithus.warwick.ac.uk/job/COVENTRY-Senior-Research-Technician-%28112556%29-CV4-7AL/1455128233/) — University of Warwick via university site (score 0)
-- [Research Assistant](https://www.jobs.ac.uk/job/DTO413/research-assistant) — University of Warwick via jobs.ac.uk (score 0)
 
 ## Problems
 
 - Birmingham Newman University: blocked  <https://newman.ac.uk/jobs/work-at-birmingham-newman/>
 - University of Dundee: blocked  <https://www.dundee.ac.uk/work-for-us/jobs>
-- University of East Anglia: error Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation <https://vacancies.uea.ac.uk/vacancies/vacancy-search-results.aspx>
 - Glasgow Caledonian University: blocked  <https://www.gcu.ac.uk/jobs>
+- University of Leicester: error Error: Page.evaluate: Execution context was destroyed, most likely because of a navigation <https://jobs.le.ac.uk/vacancies/vacancy-search-results.aspx>
 - London South Bank University: blocked  <https://www.lsbu.ac.uk/>
 - University of Oxford: blocked  <https://www.ox.ac.uk/about/jobs>
 - University of South Wales: blocked  <https://www.southwales.ac.uk/jobs/>
@@ -88,7 +58,7 @@
 - Goldsmiths, University of London (134 links; jobs.ac.uk: 0 research) <https://jobs.gold.ac.uk/vacancies.aspx?cat=-1>
 - University of Greater Manchester (92 links; jobs.ac.uk: 0 research) <https://jobs.greatermanchester.ac.uk/vacancies.aspx?cat=-1>
 - Harper Adams University (116 links; jobs.ac.uk: 0 research) <https://jobs.harper-adams.ac.uk/vacancies.aspx?cat=-1>
-- Hartpury University (78 links; jobs.ac.uk: 0 research) <https://www.eteach.com/careers/hartpury-ac/>
+- Hartpury University (80 links; jobs.ac.uk: 0 research) <https://www.eteach.com/careers/hartpury-ac/>
 - Health Sciences University (40 links; jobs.ac.uk: 0 research) <https://ce0267li.webitrent.com/ce0267li_web/wrd/run/ETREC179GF.open?WVID=68832541iV>
 - University of Hertfordshire (23 links; jobs.ac.uk: 2 research) <https://www.jobs.herts.ac.uk/>
 - University of the Highlands and Islands (62 links; jobs.ac.uk: 0 research) <https://www.uhi.ac.uk/en/staff/vacancies>
@@ -107,7 +77,7 @@
 - Northeastern University London (194 links; jobs.ac.uk: 0 research) <https://www.nulondon.ac.uk/about-us/job-opportunities/>
 - Norwich University of the Arts (124 links; jobs.ac.uk: 0 research) <https://norwichuni.ac.uk/about-us/work-at-norwich/>
 - Plymouth Marjon University (31 links; jobs.ac.uk: 0 research) <https://ce0774li.webitrent.com/ce0774li_webrecruitment/wrd/run/ETREC179GF.open?WVID=1702262QNl>
-- University of Plymouth (89 links; jobs.ac.uk: 1 research) <https://www.plymouth.ac.uk/jobs>
+- University of Plymouth (31 links; jobs.ac.uk: 1 research) <https://hrservices.plymouth.ac.uk/tlive_webrecruitment/wrd/run/ETREC179GF.open?WVID=1602750fTZ>
 - Queen Margaret University (165 links; jobs.ac.uk: 0 research) <https://www.qmu.ac.uk/footer/vacancies/vacancies/>
 - Ravensbourne University London (73 links; jobs.ac.uk: 0 research) <https://jobs.ravensbourne.ac.uk/vacancies.aspx?cat=-1>
 - Regent's University London (17 links; jobs.ac.uk: 0 research) <https://galileo.wd3.myworkdayjobs.com/regents_university_london_careersite>
@@ -119,11 +89,11 @@
 - Sheffield Hallam University (131 links; jobs.ac.uk: 2 research) <https://www.shu.ac.uk/jobs>
 - Solent University (44 links; jobs.ac.uk: 0 research) <https://recruitment.solent.ac.uk/home.html>
 - University of Southampton (159 links; jobs.ac.uk: 12 research) <https://jobs.soton.ac.uk/vacancies.aspx?cat=-1>
-- University of St Andrews (44 links; jobs.ac.uk: 6 research) <https://www.st-andrews.ac.uk/jobs>
+- University of St Andrews (38 links; jobs.ac.uk: 6 research) <https://www.st-andrews.ac.uk/jobs>
 - St Mary's University, Twickenham (47 links; jobs.ac.uk: 0 research) <https://ce0230li.webitrent.com/ce0230li_webrecruitment/wrd/run/ETREC179GF.open?WVID=4008204rQb>
 - University of Staffordshire (119 links; jobs.ac.uk: 0 research) <https://jobs.staffs.ac.uk/vacancies.aspx?cat=-1>
 - University of Strathclyde (178 links; jobs.ac.uk: 4 research) <https://www.strath.ac.uk/workwithus/vacancies/>
-- University of Suffolk (124 links; jobs.ac.uk: 0 research) <https://www.uos.ac.uk/about/working-for-us/>
+- University of Suffolk (123 links; jobs.ac.uk: 0 research) <https://www.uos.ac.uk/about/working-for-us/>
 - Teesside University (29 links; jobs.ac.uk: 1 research) <https://tuwpapps.tees.ac.uk/trent22live_webrecruitment/wrd/run/ETREC179GF.open?WVID=99338178cL>
 - University of Wales Trinity Saint David (23 links; jobs.ac.uk: 0 research) <https://jobs.uwtsd.ac.uk/Home>
 - University of the West of Scotland (31 links; jobs.ac.uk: 1 research) <https://ce0974li.webitrent.com/ce0974li_webrecruitment/wrd/run/etrec179gf.open?wvid=3866692FHL>
